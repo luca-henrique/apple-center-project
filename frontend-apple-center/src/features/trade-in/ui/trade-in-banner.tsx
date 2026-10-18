@@ -1,10 +1,7 @@
-"use client";
-
-import React, { useState } from "react";
-import { TradeInModal } from "./trade-in-modal";
+import React from "react";
+import Link from "next/link";
 
 export function TradeInBanner() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <>
@@ -29,20 +26,17 @@ export function TradeInBanner() {
             </div>
           </div>
 
-          <button
-            type="button"
-            onClick={() => setIsModalOpen(true)}
+          <Link
+            href="/trade-in"
             className="w-full md:w-auto min-h-[44px] px-5 py-2.5 rounded-xl font-label-md text-label-md font-semibold bg-primary text-on-primary hover:bg-primary-container active:scale-95 transition-all shadow-sm shrink-0 flex items-center justify-center gap-1.5 cursor-pointer"
           >
             <span>Simular Troca</span>
             <span className="material-symbols-outlined text-[18px]" aria-hidden="true">
               arrow_forward
             </span>
-          </button>
+          </Link>
         </div>
       </section>
-
-      <TradeInModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>
   );
 }

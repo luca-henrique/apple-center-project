@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import type { Product, ProductStorageOption } from "@/entities/product/model/types";
 import { formatCurrency } from "@/shared/lib/format/currency";
@@ -16,14 +17,16 @@ export function BottomActionBar({ product, selectedStorage }: BottomActionBarPro
 
   const currentPricePix = product.pricePix + (selectedStorage.priceDiff || 0);
 
+  const router = useRouter();
+
   const handleBuyNow = () => {
     setIsPurchasing(true);
+    toast.success("Iniciando checkout seguro...", {
+      description: `Preparando seu pedido de ${formatCurrency(currentPricePix)}.`,
+    });
     setTimeout(() => {
-      setIsPurchasing(false);
-      toast.success("Pedido iniciado com sucesso!", {
-        description: `Redirecionando para o pagamento seguro de ${formatCurrency(currentPricePix)}.`,
-      });
-    }, 1000);
+      router.push(`/checkout?productId=${encodeURIComponent(product.slug)}&storage=${encodeURIComponent(selectedStorage.label)}`);
+    }, 400);
   };
 
   return (

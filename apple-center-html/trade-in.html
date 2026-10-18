@@ -1,0 +1,926 @@
+<!doctype html>
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+      name="viewport"
+    />
+    <meta content="mobile_tab" name="shell-type" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @layer base {
+        html,
+        body {
+          width: 100vw;
+          margin: 0;
+          padding: 0;
+          min-height: 100%;
+        }
+        body {
+          overscroll-behavior-y: none;
+          -webkit-tap-highlight-color: transparent;
+        }
+        .pb-safe {
+          padding-bottom: env(safe-area-inset-bottom, 0px);
+        }
+        .pt-safe {
+          padding-top: env(safe-area-inset-top, 0px);
+        }
+        main > :first-child {
+          margin-top: 0 !important;
+        }
+        main > :last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary": "#ffffff",
+              "secondary-container": "#6cf8bb",
+              "on-secondary-container": "#00714d",
+              "on-surface": "#191c1e",
+              "surface-variant": "#e0e3e5",
+              "surface-container-lowest": "#ffffff",
+              secondary: "#006c49",
+              "surface-container-highest": "#e0e3e5",
+              "secondary-fixed-dim": "#4edea3",
+              surface: "#f7f9fb",
+              "surface-container-low": "#f2f4f6",
+              error: "#ba1a1a",
+              "on-secondary": "#ffffff",
+              "surface-container-high": "#e6e8ea",
+              "on-tertiary-container": "#4aa783",
+              "on-background": "#191c1e",
+              tertiary: "#002014",
+              background: "#f7f9fb",
+              "outline-variant": "#c1c8c1",
+              "on-primary-fixed": "#002112",
+              "tertiary-fixed": "#97f5cc",
+              "on-primary-container": "#74a187",
+              "primary-fixed": "#beedd0",
+              "surface-bright": "#f7f9fb",
+              "surface-container": "#eceef0",
+              "inverse-surface": "#2d3133",
+              outline: "#717973",
+              "inverse-on-surface": "#eff1f3",
+              "on-tertiary": "#ffffff",
+              "primary-container": "#083723",
+              "surface-tint": "#3c6750",
+              "error-container": "#ffdad6",
+              "on-primary-fixed-variant": "#244f39",
+              "surface-dim": "#d8dadc",
+              primary: "#002012",
+              "on-error": "#ffffff",
+              "on-tertiary-fixed": "#002115",
+              "tertiary-fixed-dim": "#7bd8b1",
+              "primary-fixed-dim": "#a2d1b4",
+              "on-error-container": "#93000a",
+              "secondary-fixed": "#6ffbbe",
+              "on-surface-variant": "#414943",
+              "inverse-primary": "#a2d1b4",
+              "on-tertiary-fixed-variant": "#00513a",
+              "tertiary-container": "#003726",
+              "on-secondary-fixed-variant": "#005236",
+              "on-secondary-fixed": "#002113",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              "gutter-desktop": "1.5rem",
+              "space-lg": "1.5rem",
+              "space-sm": "0.5rem",
+              "space-md": "1rem",
+              gutter: "1rem",
+              "margin-desktop": "2.5rem",
+              "margin-tablet": "1.5rem",
+              "space-xl": "2.25rem",
+              margin: "1rem",
+              "space-xs": "0.25rem",
+            },
+            fontFamily: {
+              "headline-sm": ["Inter"],
+              "display-hero": ["Inter"],
+              "label-lg": ["Inter"],
+              "headline-lg": ["Inter"],
+              "label-sm": ["Inter"],
+              "headline-md": ["Inter"],
+              "body-sm": ["Inter"],
+              "headline-lg-mobile": ["Inter"],
+              "body-lg": ["Inter"],
+              "body-md": ["Inter"],
+              "display-hero-mobile": ["Inter"],
+              "label-md": ["Inter"],
+            },
+            fontSize: {
+              "headline-sm": [
+                "18px",
+                { lineHeight: "24px", fontWeight: "600" },
+              ],
+              "display-hero": [
+                "44px",
+                { lineHeight: "52px", fontWeight: "700" },
+              ],
+              "label-lg": ["14px", { lineHeight: "20px", fontWeight: "600" }],
+              "headline-lg": [
+                "32px",
+                { lineHeight: "40px", fontWeight: "600" },
+              ],
+              "label-sm": ["11px", { lineHeight: "14px", fontWeight: "700" }],
+              "headline-md": [
+                "22px",
+                { lineHeight: "28px", fontWeight: "600" },
+              ],
+              "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }],
+              "headline-lg-mobile": [
+                "24px",
+                { lineHeight: "32px", fontWeight: "600" },
+              ],
+              "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+              "display-hero-mobile": [
+                "32px",
+                { lineHeight: "40px", fontWeight: "700" },
+              ],
+              "label-md": ["12px", { lineHeight: "16px", fontWeight: "600" }],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-surface text-on-surface antialiased flex flex-col min-h-screen"
+  >
+    <header
+      class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"
+    >
+      <div
+        class="h-16 px-gutter flex items-center justify-between gap-space-sm"
+      >
+        <div class="flex items-center gap-space-sm min-w-0">
+          <img
+            alt="logo-apple-center.jpg"
+            class="h-8 w-auto object-contain"
+            src="https://lh3.googleusercontent.com/aida/AEtjO1Uxf9_AImRgvMdDKA88DxU1cDhz5ia172SCRMyZ8d_9IZBqqLsWvGvCkDmKzkYeSLIsuEWVmWUjssaA8CITkmlGpj4kJkYs6m8ab4ETJfoS2Ayrotd6UypAqdvGvTZ8V2dGP1Rgqq4Ek7w8TqVesR7SVlUsV4UalM5dciJmV37UuSVetXL0e_na28XO5DNsIrhp-u94nJk17kipTZRH6-7ksWsy9ddUXVJx5m93gwaim_V7uPdcAAPDs81ILY8coAhdok42bmjFKhI"
+          />
+          <div class="flex flex-col min-w-0">
+            <span
+              class="font-label-sm text-label-sm uppercase tracking-wider text-secondary"
+              >Apple Certified</span
+            ><span
+              class="font-headline-sm text-headline-sm text-on-surface truncate leading-tight"
+              >Trade In</span
+            >
+          </div>
+        </div>
+        <div class="flex items-center gap-space-xs">
+          <button
+            aria-label="Notificações"
+            class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface transition-colors"
+          >
+            <span class="material-symbols-outlined text-[22px]"
+              >notifications</span
+            >
+          </button>
+          <div
+            class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm"
+          >
+            <span class="material-symbols-outlined text-on-primary text-[18px]"
+              >person</span
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface">
+      <div class="flex flex-col w-full">
+        <!-- Interactive Trade-in Engine Container -->
+        <div
+          class="px-gutter pt-space-md pb-space-lg flex flex-col gap-space-lg"
+        >
+          <!-- Hero / Emotional Pitch Header -->
+          <div
+            class="relative overflow-hidden rounded-xl bg-primary-container p-space-md text-on-primary shadow-md"
+          >
+            <div
+              class="absolute -right-8 -bottom-10 w-36 h-36 rounded-full bg-secondary-container/10 blur-2xl pointer-events-none"
+            ></div>
+            <div class="relative z-10 flex flex-col gap-space-xs">
+              <div
+                class="inline-flex items-center gap-1.5 self-start px-2 py-0.5 rounded-full bg-secondary/30 text-secondary-fixed text-[11px] font-label-sm font-bold tracking-wide"
+              >
+                <span class="material-symbols-outlined text-[14px]">eco</span>
+                CIRCULAR TECH
+              </div>
+              <h1
+                class="font-headline-lg-mobile text-headline-lg-mobile leading-tight text-on-primary font-bold"
+              >
+                Troque seu iPhone usado por um novinho com desconto imediato
+              </h1>
+              <p
+                class="font-body-md text-body-md text-primary-fixed-dim leading-snug"
+              >
+                Cotação instantânea com rigor de laboratório Apple. Ganhe bônus
+                exclusivo na troca garantida.
+              </p>
+            </div>
+          </div>
+          <!-- Step Progress Indicator -->
+          <div class="flex items-center justify-between px-space-xs">
+            <div class="flex items-center gap-2">
+              <span
+                class="w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-sm text-label-sm font-bold"
+                id="step-badge"
+                >1</span
+              >
+              <span class="font-label-md text-label-md text-on-surface"
+                >Simulação em 3 passos</span
+              >
+            </div>
+            <div class="flex gap-1.5" id="step-dots">
+              <div
+                class="w-8 h-1.5 rounded-full bg-secondary transition-all duration-300"
+                data-dot="1"
+              ></div>
+              <div
+                class="w-2.5 h-1.5 rounded-full bg-surface-container-highest transition-all duration-300"
+                data-dot="2"
+              ></div>
+              <div
+                class="w-2.5 h-1.5 rounded-full bg-surface-container-highest transition-all duration-300"
+                data-dot="3"
+              ></div>
+            </div>
+          </div>
+          <!-- Step Form Section -->
+          <section
+            class="flex flex-col gap-space-md bg-surface-container-lowest rounded-xl p-space-md shadow-sm"
+          >
+            <!-- ETAPA 1: Modelo & Capacidade -->
+            <div class="flex flex-col gap-space-sm" id="section-step-1">
+              <div class="flex items-center justify-between">
+                <label
+                  class="font-label-lg text-label-lg text-on-surface flex items-center gap-1.5"
+                >
+                  <span
+                    class="material-symbols-outlined text-secondary text-[18px]"
+                    >smartphone</span
+                  >
+                  1. Qual é o seu modelo atual?
+                </label>
+                <span
+                  class="font-label-sm text-label-sm text-secondary font-bold"
+                  >Passo 1/3</span
+                >
+              </div>
+              <div class="relative">
+                <select
+                  class="w-full h-12 px-3 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md appearance-none focus:outline-none focus:bg-surface-container"
+                  id="model-select"
+                >
+                  <option data-name="iPhone 12 128GB" value="1800">
+                    iPhone 12 128GB
+                  </option>
+                  <option data-name="iPhone 13 128GB" selected="" value="2450">
+                    iPhone 13 128GB
+                  </option>
+                  <option data-name="iPhone 13 Pro 128GB" value="2900">
+                    iPhone 13 Pro 128GB
+                  </option>
+                  <option data-name="iPhone 14 128GB" value="3300">
+                    iPhone 14 128GB
+                  </option>
+                  <option data-name="iPhone 14 Pro 128GB" value="3950">
+                    iPhone 14 Pro 128GB
+                  </option>
+                  <option data-name="iPhone 15 128GB" value="4400">
+                    iPhone 15 128GB
+                  </option>
+                </select>
+                <span
+                  class="material-symbols-outlined absolute right-3 top-3 text-on-surface-variant pointer-events-none text-[20px]"
+                  >expand_more</span
+                >
+              </div>
+              <!-- Visual Mini Thumbnail of Device -->
+              <div
+                class="flex items-center gap-3 p-2.5 rounded-lg bg-surface-container-low"
+              >
+                <div
+                  class="w-12 h-12 rounded-lg bg-surface flex items-center justify-center shadow-sm overflow-hidden flex-shrink-0"
+                >
+                  <img
+                    class="w-full h-full object-cover"
+                    data-alt="Close-up of a sleek Apple iPhone 13 in alpine green titanium finish resting on a clean minimalist architectural surface with soft studio laboratory lighting and authentic reflections."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCA7c7Fjp9TjaJNcjmFc6eQYKlO7zluX7oaAn-u6P-nJpeVk3p3h6jV0XARm8PBiHu4bP3Nl_gQ27JnMOM2S0THjF9ZCb2z0nbyJs55X1mFIE9UhRBNvqbfMf14t1_zsrdM85b2UDy-MgrxP0WrZ0Z0LL7Iknh856j7J9u7Rdlxp00rXUjLr3wG4-MHl4Lv-Pou1s_tBUpN6psE7Nrzy--SbgqXtjI-2uWyb6wp4T4SOo5ET9tT-XHnA"
+                  />
+                </div>
+                <div class="flex flex-col min-w-0">
+                  <span
+                    class="font-label-md text-label-md text-on-surface truncate"
+                    id="selected-model-text"
+                    >iPhone 13 128GB</span
+                  >
+                  <span
+                    class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1"
+                  >
+                    <span
+                      class="material-symbols-outlined text-[13px] text-secondary"
+                      >verified</span
+                    >
+                    Homologado Anatel
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="h-[1px] bg-surface-container-highest"></div>
+            <!-- ETAPA 2: Estado Cosmético -->
+            <div class="flex flex-col gap-space-sm" id="section-step-2">
+              <div class="flex items-center justify-between">
+                <label
+                  class="font-label-lg text-label-lg text-on-surface flex items-center gap-1.5"
+                >
+                  <span
+                    class="material-symbols-outlined text-secondary text-[18px]"
+                    >verified_user</span
+                  >
+                  2. Qual o estado do aparelho?
+                </label>
+                <span
+                  class="font-label-sm text-label-sm text-secondary font-bold"
+                  >Passo 2/3</span
+                >
+              </div>
+              <div class="flex flex-col gap-2" id="condition-group">
+                <!-- Opção Perfeito -->
+                <button
+                  class="condition-btn w-full p-3 rounded-lg bg-surface-container text-left flex items-start justify-between transition-all"
+                  data-multiplier="1.0"
+                  type="button"
+                >
+                  <div class="flex items-start gap-2.5">
+                    <span
+                      class="material-symbols-outlined text-secondary text-[20px] mt-0.5"
+                      >diamond</span
+                    >
+                    <div class="flex flex-col">
+                      <span class="font-label-md text-label-md text-on-surface"
+                        >Perfeito (Como novo)</span
+                      >
+                      <span
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                        >Tela e corpo sem riscos ou amassados</span
+                      >
+                    </div>
+                  </div>
+                  <span
+                    class="check-icon material-symbols-outlined text-secondary text-[20px]"
+                    >check_circle</span
+                  >
+                </button>
+                <!-- Opção Bom -->
+                <button
+                  class="condition-btn w-full p-3 rounded-lg bg-surface-container-low text-left flex items-start justify-between transition-all"
+                  data-multiplier="0.88"
+                  type="button"
+                >
+                  <div class="flex items-start gap-2.5">
+                    <span
+                      class="material-symbols-outlined text-on-surface-variant text-[20px] mt-0.5"
+                      >thumb_up</span
+                    >
+                    <div class="flex flex-col">
+                      <span class="font-label-md text-label-md text-on-surface"
+                        >Bom (Leves marcas de uso)</span
+                      >
+                      <span
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                        >Micro-riscos imperceptíveis no display</span
+                      >
+                    </div>
+                  </div>
+                  <span
+                    class="check-icon hidden material-symbols-outlined text-secondary text-[20px]"
+                    >check_circle</span
+                  >
+                </button>
+                <!-- Opção Com detalhes -->
+                <button
+                  class="condition-btn w-full p-3 rounded-lg bg-surface-container-low text-left flex items-start justify-between transition-all"
+                  data-multiplier="0.70"
+                  type="button"
+                >
+                  <div class="flex items-start gap-2.5">
+                    <span
+                      class="material-symbols-outlined text-on-surface-variant text-[20px] mt-0.5"
+                      >broken_image</span
+                    >
+                    <div class="flex flex-col">
+                      <span class="font-label-md text-label-md text-on-surface"
+                        >Com detalhes (Riscos ou trincas)</span
+                      >
+                      <span
+                        class="font-body-sm text-body-sm text-on-surface-variant"
+                        >Sinais de queda ou trinca sem afetar touch</span
+                      >
+                    </div>
+                  </div>
+                  <span
+                    class="check-icon hidden material-symbols-outlined text-secondary text-[20px]"
+                    >check_circle</span
+                  >
+                </button>
+              </div>
+            </div>
+            <div class="h-[1px] bg-surface-container-highest"></div>
+            <!-- ETAPA 3: Saúde da bateria -->
+            <div class="flex flex-col gap-space-sm" id="section-step-3">
+              <div class="flex items-center justify-between">
+                <label
+                  class="font-label-lg text-label-lg text-on-surface flex items-center gap-1.5"
+                >
+                  <span
+                    class="material-symbols-outlined text-secondary text-[18px]"
+                    >battery_charging_full</span
+                  >
+                  3. Saúde da bateria
+                </label>
+                <span
+                  class="font-label-sm text-label-sm text-secondary font-bold"
+                  >Passo 3/3</span
+                >
+              </div>
+              <div class="grid grid-cols-2 gap-2" id="battery-group">
+                <button
+                  class="battery-btn p-3 rounded-lg bg-surface-container text-center flex flex-col items-center justify-center gap-1 transition-all"
+                  data-battery="above"
+                  type="button"
+                >
+                  <div class="flex items-center gap-1 text-secondary">
+                    <span class="material-symbols-outlined text-[20px]"
+                      >battery_full</span
+                    >
+                    <span class="font-label-md text-label-md font-bold"
+                      >Acima de 85%</span
+                    >
+                  </div>
+                  <span
+                    class="font-body-sm text-body-sm text-on-surface-variant"
+                    >Valor máximo retido</span
+                  >
+                </button>
+                <button
+                  class="battery-btn p-3 rounded-lg bg-surface-container-low text-center flex flex-col items-center justify-center gap-1 transition-all"
+                  data-battery="below"
+                  type="button"
+                >
+                  <div class="flex items-center gap-1 text-on-surface-variant">
+                    <span class="material-symbols-outlined text-[20px]"
+                      >battery_alert</span
+                    >
+                    <span class="font-label-md text-label-md font-bold"
+                      >Abaixo de 85%</span
+                    >
+                  </div>
+                  <span
+                    class="font-body-sm text-body-sm text-on-surface-variant"
+                    >Reciclagem técnica</span
+                  >
+                </button>
+              </div>
+            </div>
+          </section>
+          <!-- Valuation Showcase Card -->
+          <div
+            class="relative overflow-hidden rounded-xl bg-gradient-to-br from-primary-container via-tertiary-container to-primary text-on-primary p-space-md shadow-md"
+          >
+            <div class="flex flex-col gap-space-xs">
+              <div class="flex items-center justify-between">
+                <span
+                  class="font-label-sm text-label-sm uppercase tracking-wider text-secondary-fixed"
+                  >Avaliação instantânea</span
+                >
+                <span
+                  class="inline-flex items-center gap-1 text-[11px] font-label-sm px-2 py-0.5 rounded-full bg-secondary/20 text-secondary-fixed"
+                >
+                  <span
+                    class="w-1.5 h-1.5 rounded-full bg-secondary-fixed animate-pulse"
+                  ></span>
+                  Válido por 7 dias
+                </span>
+              </div>
+              <div class="flex flex-col">
+                <span class="font-body-sm text-body-sm text-primary-fixed-dim"
+                  >Seu aparelho vale até</span
+                >
+                <div class="flex items-baseline gap-1.5">
+                  <span
+                    class="font-display-hero-mobile text-display-hero-mobile font-bold text-on-primary tracking-tight"
+                    id="valuation-amount"
+                    >R$ 2.450,00</span
+                  >
+                </div>
+              </div>
+              <!-- Redemption Modes Selection -->
+              <div
+                class="flex flex-col gap-2 mt-2 pt-2 border-t border-primary-fixed-variant/40"
+              >
+                <span class="font-label-sm text-label-sm text-primary-fixed-dim"
+                  >Escolha como deseja receber:</span
+                >
+                <div class="flex flex-col gap-2" id="payout-group">
+                  <!-- Modo 1: Crédito com Bônus -->
+                  <label
+                    class="payout-card flex items-center justify-between p-2.5 rounded-lg bg-on-primary/10 cursor-pointer transition-colors"
+                  >
+                    <div class="flex items-center gap-2.5 min-w-0">
+                      <input
+                        checked=""
+                        class="w-4 h-4 text-secondary accent-secondary"
+                        name="payout-type"
+                        type="radio"
+                        value="credit"
+                      />
+                      <div class="flex flex-col min-w-0">
+                        <div class="flex items-center gap-1.5">
+                          <span
+                            class="font-label-md text-label-md font-bold text-on-primary truncate"
+                            >Crédito no novo iPhone</span
+                          >
+                          <span
+                            class="px-1.5 py-0.2 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-[10px] font-bold whitespace-nowrap"
+                            >+ R$ 200 BÔNUS</span
+                          >
+                        </div>
+                        <span
+                          class="font-body-sm text-[11px] text-primary-fixed leading-tight"
+                          id="credit-detail"
+                          >Total: R$ 2.650,00 aplicados no checkout</span
+                        >
+                      </div>
+                    </div>
+                    <span
+                      class="material-symbols-outlined text-secondary-fixed text-[20px] flex-shrink-0"
+                      >add_shopping_cart</span
+                    >
+                  </label>
+                  <!-- Modo 2: Pix em conta -->
+                  <label
+                    class="payout-card flex items-center justify-between p-2.5 rounded-lg bg-on-primary/5 cursor-pointer transition-colors"
+                  >
+                    <div class="flex items-center gap-2.5 min-w-0">
+                      <input
+                        class="w-4 h-4 text-secondary accent-secondary"
+                        name="payout-type"
+                        type="radio"
+                        value="pix"
+                      />
+                      <div class="flex flex-col min-w-0">
+                        <span
+                          class="font-label-md text-label-md font-bold text-on-primary truncate"
+                          >Receber via Pix na conta</span
+                        >
+                        <span
+                          class="font-body-sm text-[11px] text-primary-fixed leading-tight"
+                          >Transferência direta após validação</span
+                        >
+                      </div>
+                    </div>
+                    <span
+                      class="material-symbols-outlined text-primary-fixed-dim text-[20px] flex-shrink-0"
+                      >account_balance_wallet</span
+                    >
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Como Funciona o Processo (3 Passos Simples) -->
+          <div class="flex flex-col gap-space-sm">
+            <div class="flex items-center justify-between px-space-xs">
+              <h2 class="font-headline-sm text-headline-sm text-on-surface">
+                Como funciona o processo
+              </h2>
+              <span
+                class="font-label-sm text-label-sm text-secondary flex items-center gap-0.5"
+              >
+                100% Seguro
+                <span class="material-symbols-outlined text-[14px]">lock</span>
+              </span>
+            </div>
+            <div class="grid grid-cols-1 gap-2.5">
+              <!-- Passo 1 -->
+              <div
+                class="flex items-center gap-3 p-3 rounded-lg bg-surface-container-lowest shadow-sm"
+              >
+                <div
+                  class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-secondary font-headline-sm flex-shrink-0"
+                >
+                  <span class="material-symbols-outlined text-[20px]"
+                    >devices</span
+                  >
+                </div>
+                <div class="flex flex-col min-w-0">
+                  <span class="font-label-md text-label-md text-on-surface"
+                    >1. Simule online</span
+                  >
+                  <span
+                    class="font-body-sm text-body-sm text-on-surface-variant"
+                    >Responda o formulário em menos de 1 minuto sem
+                    compromisso.</span
+                  >
+                </div>
+              </div>
+              <!-- Passo 2 -->
+              <div
+                class="flex items-center gap-3 p-3 rounded-lg bg-surface-container-lowest shadow-sm"
+              >
+                <div
+                  class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-secondary font-headline-sm flex-shrink-0"
+                >
+                  <span class="material-symbols-outlined text-[20px]"
+                    >local_shipping</span
+                  >
+                </div>
+                <div class="flex flex-col min-w-0">
+                  <span class="font-label-md text-label-md text-on-surface"
+                    >2. Envio gratuito com seguro</span
+                  >
+                  <span
+                    class="font-body-sm text-body-sm text-on-surface-variant"
+                    >Poste nos Correios com código pré-pago e rastreio
+                    blindado.</span
+                  >
+                </div>
+              </div>
+              <!-- Passo 3 -->
+              <div
+                class="flex items-center gap-3 p-3 rounded-lg bg-surface-container-lowest shadow-sm"
+              >
+                <div
+                  class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-secondary font-headline-sm flex-shrink-0"
+                >
+                  <span class="material-symbols-outlined text-[20px]"
+                    >paid</span
+                  >
+                </div>
+                <div class="flex flex-col min-w-0">
+                  <span class="font-label-md text-label-md text-on-surface"
+                    >3. Avaliação e Pix em até 24h</span
+                  >
+                  <span
+                    class="font-body-sm text-body-sm text-on-surface-variant"
+                    >Laudo técnico aprovado e liberação imediata do dinheiro ou
+                    cupom.</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Assurance Banner with Lab Quality Guarantee -->
+          <div
+            class="p-3.5 rounded-lg bg-surface-container-low flex items-center gap-3"
+          >
+            <div
+              class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container flex-shrink-0"
+            >
+              <span class="material-symbols-outlined text-[18px]"
+                >verified</span
+              >
+            </div>
+            <p
+              class="font-body-sm text-body-sm text-on-surface-variant leading-snug"
+            >
+              Se o estado real divergente do simulado, nós devolvemos seu iPhone
+              de graça, sem custos adicionais.
+            </p>
+          </div>
+          <!-- Action Sticky-like Button -->
+          <div class="pt-space-xs flex flex-col gap-2">
+            <button
+              class="w-full h-13 py-3.5 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-md active:scale-[0.98] transition-transform"
+              id="cta-tradein"
+              type="button"
+            >
+              <span>Continuar com Trade-in</span>
+              <span class="material-symbols-outlined text-[20px]"
+                >arrow_forward</span
+              >
+            </button>
+            <span
+              class="font-body-sm text-body-sm text-center text-on-surface-variant"
+            >
+              Mais de 12.000 iPhones avaliados este mês
+            </span>
+          </div>
+        </div>
+        <!-- Local Script for Dynamic Interactive Calculation -->
+        <script>
+          (function initTradeInEngine() {
+            const modelSelect = document.getElementById("model-select");
+            const selectedModelText = document.getElementById(
+              "selected-model-text",
+            );
+            const valuationAmount = document.getElementById("valuation-amount");
+            const creditDetail = document.getElementById("credit-detail");
+            const conditionButtons =
+              document.querySelectorAll(".condition-btn");
+            const batteryButtons = document.querySelectorAll(".battery-btn");
+            const payoutRadios = document.querySelectorAll(
+              'input[name="payout-type"]',
+            );
+            const payoutCards = document.querySelectorAll(".payout-card");
+            const stepBadge = document.getElementById("step-badge");
+            const stepDots = document.querySelectorAll("[data-dot]");
+
+            let currentBase = 2450;
+            let currentConditionMul = 1.0;
+            let currentBatteryMul = 1.0;
+            const creditBonus = 200;
+
+            function formatBRL(value) {
+              return value.toLocaleString("pt-BR", {
+                style: "currency",
+                currency: "BRL",
+              });
+            }
+
+            function updateCalculation() {
+              const finalCash =
+                Math.round(
+                  (currentBase * currentConditionMul * currentBatteryMul) / 10,
+                ) * 10;
+              const finalCredit = finalCash + creditBonus;
+
+              const isPix =
+                document.querySelector('input[name="payout-type"]:checked')
+                  .value === "pix";
+              valuationAmount.textContent = formatBRL(
+                isPix ? finalCash : finalCredit,
+              );
+              creditDetail.textContent = `Total: ${formatBRL(finalCredit)} aplicados no checkout`;
+            }
+
+            // Model Select Change
+            modelSelect.addEventListener("change", (e) => {
+              const opt = e.target.selectedOptions[0];
+              currentBase = parseFloat(opt.value);
+              selectedModelText.textContent = opt.dataset.name;
+              updateCalculation();
+              setStep(1);
+            });
+
+            // Condition Select Change
+            conditionButtons.forEach((btn) => {
+              btn.addEventListener("click", () => {
+                conditionButtons.forEach((b) => {
+                  b.classList.remove("bg-surface-container");
+                  b.classList.add("bg-surface-container-low");
+                  const icon = b.querySelector(".check-icon");
+                  if (icon) icon.classList.add("hidden");
+                });
+
+                btn.classList.add("bg-surface-container");
+                btn.classList.remove("bg-surface-container-low");
+                const activeIcon = btn.querySelector(".check-icon");
+                if (activeIcon) activeIcon.classList.remove("hidden");
+
+                currentConditionMul = parseFloat(btn.dataset.multiplier);
+                updateCalculation();
+                setStep(2);
+              });
+            });
+
+            // Battery Select Change
+            batteryButtons.forEach((btn) => {
+              btn.addEventListener("click", () => {
+                batteryButtons.forEach((b) => {
+                  b.classList.remove("bg-surface-container");
+                  b.classList.add("bg-surface-container-low");
+                  const iconWrap = b.firstElementChild;
+                  iconWrap.classList.remove("text-secondary");
+                  iconWrap.classList.add("text-on-surface-variant");
+                });
+
+                btn.classList.add("bg-surface-container");
+                btn.classList.remove("bg-surface-container-low");
+                const iconWrap = btn.firstElementChild;
+                iconWrap.classList.add("text-secondary");
+                iconWrap.classList.remove("text-on-surface-variant");
+
+                currentBatteryMul =
+                  btn.dataset.battery === "above" ? 1.0 : 0.82;
+                updateCalculation();
+                setStep(3);
+              });
+            });
+
+            // Payout Option Switch
+            payoutRadios.forEach((radio) => {
+              radio.addEventListener("change", () => {
+                payoutCards.forEach((card) => {
+                  card.classList.remove("bg-on-primary/10");
+                  card.classList.add("bg-on-primary/5");
+                });
+                radio.closest(".payout-card").classList.add("bg-on-primary/10");
+                radio
+                  .closest(".payout-card")
+                  .classList.remove("bg-on-primary/5");
+                updateCalculation();
+              });
+            });
+
+            // Step Progress Helpers
+            function setStep(stepNum) {
+              stepBadge.textContent = stepNum;
+              stepDots.forEach((dot, index) => {
+                if (index + 1 <= stepNum) {
+                  dot.className =
+                    "w-8 h-1.5 rounded-full bg-secondary transition-all duration-300";
+                } else {
+                  dot.className =
+                    "w-2.5 h-1.5 rounded-full bg-surface-container-highest transition-all duration-300";
+                }
+              });
+            }
+
+            // Initial Call
+            updateCalculation();
+          })();
+        </script>
+      </div>
+    </main>
+    <nav
+      class="fixed bottom-0 w-full z-50 pb-safe bg-surface/85 backdrop-blur-xl shadow-[0_-4px_16px_rgba(15,23,42,0.05)]"
+      data-active-classes="text-secondary"
+    >
+      <div class="flex justify-around items-center h-16 px-space-xs">
+        <a
+          class="flex flex-col items-center justify-center min-w-[64px] h-12 gap-0.5 text-on-surface-variant hover:text-on-surface transition-colors"
+          data-path="inicio"
+          href="#"
+          ><span class="material-symbols-outlined text-[24px]">home</span
+          ><span class="font-label-sm text-label-sm">Início</span></a
+        ><a
+          class="flex flex-col items-center justify-center min-w-[64px] h-12 gap-0.5 text-on-surface-variant hover:text-on-surface transition-colors"
+          data-path="catalogo"
+          href="#"
+          ><span class="material-symbols-outlined text-[24px]">devices</span
+          ><span class="font-label-sm text-label-sm">Catálogo</span></a
+        ><a
+          aria-current="page"
+          class="flex flex-col items-center justify-center min-w-[64px] h-12 gap-0.5 transition-colors text-secondary"
+          data-path="trade-in"
+          href="#"
+          ><span class="material-symbols-outlined text-[24px]"
+            >sync_saved_locally</span
+          ><span class="font-label-sm text-label-sm">Trade-in</span></a
+        ><a
+          class="relative flex flex-col items-center justify-center min-w-[64px] h-12 gap-0.5 text-on-surface-variant hover:text-on-surface transition-colors"
+          data-path="carrinho"
+          href="#"
+          ><div class="relative flex items-center justify-center">
+            <span class="material-symbols-outlined text-[24px]"
+              >shopping_bag</span
+            ><span
+              class="absolute -top-1.5 -right-2 px-1.5 min-w-[18px] h-[18px] flex items-center justify-center rounded-full bg-secondary text-on-secondary font-label-sm text-[10px] leading-none font-bold"
+              >2</span
+            >
+          </div>
+          <span class="font-label-sm text-label-sm">Carrinho</span></a
+        >
+      </div>
+    </nav>
+  </body>
+</html>

@@ -8,10 +8,10 @@ export function BottomNav() {
   const pathname = usePathname();
 
   const navItems = [
-    { label: "Início", href: "/", icon: "storefront" },
+    { label: "Início", href: "/", icon: "home" },
     { label: "Catálogo", href: "/#produtos", icon: "devices" },
-    { label: "Garantia", href: "/#laudo", icon: "verified_user" },
-    { label: "Avaliações", href: "/#avaliacoes", icon: "reviews" },
+    { label: "Trade-in", href: "/trade-in", icon: "sync_saved_locally" },
+    { label: "Checkout", href: "/checkout", icon: "shopping_bag" },
   ];
 
   return (
