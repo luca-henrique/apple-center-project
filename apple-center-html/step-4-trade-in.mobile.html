@@ -1,0 +1,680 @@
+<!doctype html>
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+      name="viewport"
+    />
+    <meta content="mobile_stack" name="shell-type" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @layer base {
+        html,
+        body {
+          width: 100vw;
+          margin: 0;
+          padding: 0;
+          min-height: 100%;
+        }
+        body {
+          overscroll-behavior-y: none;
+          -webkit-tap-highlight-color: transparent;
+        }
+        .pb-safe {
+          padding-bottom: env(safe-area-inset-bottom, 0px);
+        }
+        .pt-safe {
+          padding-top: env(safe-area-inset-top, 0px);
+        }
+        main > :first-child {
+          margin-top: 0 !important;
+        }
+        main > :last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary": "#ffffff",
+              "secondary-container": "#6cf8bb",
+              "on-secondary-container": "#00714d",
+              "on-surface": "#191c1e",
+              "surface-variant": "#e0e3e5",
+              "surface-container-lowest": "#ffffff",
+              secondary: "#006c49",
+              "surface-container-highest": "#e0e3e5",
+              "secondary-fixed-dim": "#4edea3",
+              surface: "#f7f9fb",
+              "surface-container-low": "#f2f4f6",
+              error: "#ba1a1a",
+              "on-secondary": "#ffffff",
+              "surface-container-high": "#e6e8ea",
+              "on-tertiary-container": "#4aa783",
+              "on-background": "#191c1e",
+              tertiary: "#002014",
+              background: "#f7f9fb",
+              "outline-variant": "#c1c8c1",
+              "on-primary-fixed": "#002112",
+              "tertiary-fixed": "#97f5cc",
+              "on-primary-container": "#74a187",
+              "primary-fixed": "#beedd0",
+              "surface-bright": "#f7f9fb",
+              "surface-container": "#eceef0",
+              "inverse-surface": "#2d3133",
+              outline: "#717973",
+              "inverse-on-surface": "#eff1f3",
+              "on-tertiary": "#ffffff",
+              "primary-container": "#083723",
+              "surface-tint": "#3c6750",
+              "error-container": "#ffdad6",
+              "on-primary-fixed-variant": "#244f39",
+              "surface-dim": "#d8dadc",
+              primary: "#002012",
+              "on-error": "#ffffff",
+              "on-tertiary-fixed": "#002115",
+              "tertiary-fixed-dim": "#7bd8b1",
+              "primary-fixed-dim": "#a2d1b4",
+              "on-error-container": "#93000a",
+              "secondary-fixed": "#6ffbbe",
+              "on-surface-variant": "#414943",
+              "inverse-primary": "#a2d1b4",
+              "on-tertiary-fixed-variant": "#00513a",
+              "tertiary-container": "#003726",
+              "on-secondary-fixed-variant": "#005236",
+              "on-secondary-fixed": "#002113",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              "gutter-desktop": "1.5rem",
+              "space-lg": "1.5rem",
+              "space-sm": "0.5rem",
+              "space-md": "1rem",
+              gutter: "1rem",
+              "margin-desktop": "2.5rem",
+              "margin-tablet": "1.5rem",
+              "space-xl": "2.25rem",
+              margin: "1rem",
+              "space-xs": "0.25rem",
+            },
+            fontFamily: {
+              "headline-sm": ["Inter"],
+              "display-hero": ["Inter"],
+              "label-lg": ["Inter"],
+              "headline-lg": ["Inter"],
+              "label-sm": ["Inter"],
+              "headline-md": ["Inter"],
+              "body-sm": ["Inter"],
+              "headline-lg-mobile": ["Inter"],
+              "body-lg": ["Inter"],
+              "body-md": ["Inter"],
+              "display-hero-mobile": ["Inter"],
+              "label-md": ["Inter"],
+            },
+            fontSize: {
+              "headline-sm": [
+                "18px",
+                { lineHeight: "24px", fontWeight: "600" },
+              ],
+              "display-hero": [
+                "44px",
+                { lineHeight: "52px", fontWeight: "700" },
+              ],
+              "label-lg": ["14px", { lineHeight: "20px", fontWeight: "600" }],
+              "headline-lg": [
+                "32px",
+                { lineHeight: "40px", fontWeight: "600" },
+              ],
+              "label-sm": ["11px", { lineHeight: "14px", fontWeight: "700" }],
+              "headline-md": [
+                "22px",
+                { lineHeight: "28px", fontWeight: "600" },
+              ],
+              "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }],
+              "headline-lg-mobile": [
+                "24px",
+                { lineHeight: "32px", fontWeight: "600" },
+              ],
+              "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+              "display-hero-mobile": [
+                "32px",
+                { lineHeight: "40px", fontWeight: "700" },
+              ],
+              "label-md": ["12px", { lineHeight: "16px", fontWeight: "600" }],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-surface text-on-surface antialiased flex flex-col min-h-screen"
+  >
+    <header
+      class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"
+    >
+      <div
+        class="h-16 px-gutter flex items-center justify-between gap-space-sm"
+      >
+        <div class="flex items-center gap-space-xs min-w-0">
+          <button
+            aria-label="Voltar"
+            class="w-11 h-11 -ml-2 flex items-center justify-center rounded-full text-on-surface hover:text-secondary transition-colors"
+            onclick="history.back()"
+          >
+            <span class="material-symbols-outlined text-[24px]"
+              >arrow_back_ios_new</span
+            ></button
+          ><img
+            alt="logo-apple-center.jpg"
+            class="h-8 w-auto object-contain"
+            src="https://lh3.googleusercontent.com/aida/AEtjO1Uxf9_AImRgvMdDKA88DxU1cDhz5ia172SCRMyZ8d_9IZBqqLsWvGvCkDmKzkYeSLIsuEWVmWUjssaA8CITkmlGpj4kJkYs6m8ab4ETJfoS2Ayrotd6UypAqdvGvTZ8V2dGP1Rgqq4Ek7w8TqVesR7SVlUsV4UalM5dciJmV37UuSVetXL0e_na28XO5DNsIrhp-u94nJk17kipTZRH6-7ksWsy9ddUXVJx5m93gwaim_V7uPdcAAPDs81ILY8coAhdok42bmjFKhI"
+          />
+          <h1
+            class="font-headline-sm text-headline-sm text-on-surface truncate leading-tight"
+          >
+            Resgate E Crédito Liberado Trade In
+          </h1>
+        </div>
+        <div class="flex items-center gap-space-xs">
+          <div
+            class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm"
+          >
+            <span class="material-symbols-outlined text-on-primary text-[18px]"
+              >person</span
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface">
+      <div class="flex flex-col w-full pb-10">
+        <!-- Stepper de Conclusão -->
+        <section class="px-gutter pt-space-md pb-space-sm">
+          <div
+            class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm"
+          >
+            <div class="flex items-center justify-between relative">
+              <div
+                class="absolute left-3 right-3 top-1/2 -translate-y-1/2 h-1 bg-secondary-container z-0 rounded-full"
+              ></div>
+              <!-- Step 1 -->
+              <div class="relative z-10 flex flex-col items-center">
+                <div
+                  class="w-7 h-7 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-sm"
+                >
+                  <span class="material-symbols-outlined text-[16px]"
+                    >check</span
+                  >
+                </div>
+                <span
+                  class="font-label-sm text-label-sm text-secondary font-semibold mt-1"
+                  >Cotação</span
+                >
+              </div>
+              <!-- Step 2 -->
+              <div class="relative z-10 flex flex-col items-center">
+                <div
+                  class="w-7 h-7 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-sm"
+                >
+                  <span class="material-symbols-outlined text-[16px]"
+                    >check</span
+                  >
+                </div>
+                <span
+                  class="font-label-sm text-label-sm text-secondary font-semibold mt-1"
+                  >Envio</span
+                >
+              </div>
+              <!-- Step 3 -->
+              <div class="relative z-10 flex flex-col items-center">
+                <div
+                  class="w-7 h-7 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-sm"
+                >
+                  <span class="material-symbols-outlined text-[16px]"
+                    >check</span
+                  >
+                </div>
+                <span
+                  class="font-label-sm text-label-sm text-secondary font-semibold mt-1"
+                  >Laudo</span
+                >
+              </div>
+              <!-- Step 4 Active Success -->
+              <div class="relative z-10 flex flex-col items-center">
+                <div
+                  class="w-7 h-7 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shadow-sm animate-pulse"
+                >
+                  <span class="material-symbols-outlined text-[16px]"
+                    >verified</span
+                  >
+                </div>
+                <span
+                  class="font-label-sm text-label-sm text-on-secondary-container font-semibold mt-1"
+                  >Resgatado</span
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Hero de Celebração & Sucesso -->
+        <section class="px-gutter py-space-sm text-center">
+          <div
+            class="relative inline-flex items-center justify-center mb-space-sm"
+          >
+            <div
+              class="w-20 h-20 rounded-full bg-secondary-container/40 flex items-center justify-center"
+            >
+              <div
+                class="w-14 h-14 rounded-full bg-secondary flex items-center justify-center shadow-md"
+              >
+                <span
+                  class="material-symbols-outlined text-on-secondary text-[32px]"
+                  >workspace_premium</span
+                >
+              </div>
+            </div>
+            <div
+              class="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shadow-sm"
+            >
+              <span class="material-symbols-outlined text-[14px]">bolt</span>
+            </div>
+          </div>
+          <h2
+            class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-space-xs font-bold"
+          >
+            Troca Finalizada com Sucesso!
+          </h2>
+          <p
+            class="font-body-md text-body-md text-on-surface-variant max-w-xs mx-auto"
+          >
+            O valor da avaliação do seu
+            <span class="font-semibold text-on-surface">iPhone 13 128GB</span>
+            foi liberado para uso imediato.
+          </p>
+          <div
+            class="inline-flex items-center gap-space-xs px-3 py-1 mt-space-sm rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm"
+          >
+            <span class="material-symbols-outlined text-[14px] text-secondary"
+              >receipt_long</span
+            >
+            <span
+              >Protocolo: <strong class="text-on-surface">#TRD-89420</strong> •
+              24/10/2025</span
+            >
+          </div>
+        </section>
+        <!-- Card Destaque Vale-Crédito Ativo -->
+        <section class="px-gutter mt-space-md">
+          <div
+            class="relative overflow-hidden rounded-xl bg-primary-container text-on-primary p-space-lg shadow-md"
+          >
+            <!-- Decoração de fundo sutil -->
+            <div
+              class="absolute -right-10 -bottom-10 w-44 h-44 rounded-full bg-secondary-container/10 pointer-events-none blur-2xl"
+            ></div>
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-secondary-container/20 to-transparent pointer-events-none"
+            ></div>
+            <div class="relative z-10 flex flex-col">
+              <div class="flex items-center justify-between mb-space-xs">
+                <span
+                  class="font-label-md text-label-md uppercase tracking-wider text-primary-fixed"
+                  >Crédito Disponível</span
+                >
+                <span
+                  class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold"
+                >
+                  <span class="material-symbols-outlined text-[12px]"
+                    >add_circle</span
+                  >
+                  +R$ 300 Bônus Trade-in
+                </span>
+              </div>
+              <div class="my-space-xs flex items-baseline gap-1">
+                <span
+                  class="font-display-hero-mobile text-display-hero-mobile font-bold tracking-tight text-white"
+                >
+                  R$ 3.240,00
+                </span>
+              </div>
+              <p
+                class="font-body-sm text-body-sm text-surface-variant/90 mb-space-md"
+              >
+                Disponível por 30 dias para qualquer iPhone novo ou Seminovo
+                Certificado.
+              </p>
+              <!-- Bloco Cupom com Copiar -->
+              <div
+                class="bg-primary/60 backdrop-blur-md rounded-lg p-space-sm flex items-center justify-between gap-space-sm"
+              >
+                <div class="min-w-0 flex-1">
+                  <span
+                    class="block font-label-sm text-label-sm text-surface-variant font-medium"
+                    >Cupom de Resgate Imediato</span
+                  >
+                  <span
+                    class="font-headline-sm text-headline-sm text-secondary-fixed tracking-wider font-mono truncate select-all"
+                    id="coupon-code"
+                  >
+                    TRADEIN-LUCAS-89420
+                  </span>
+                </div>
+                <button
+                  class="px-space-md h-10 rounded bg-secondary-container text-on-secondary-container font-label-md text-label-md flex items-center gap-1 active:scale-95 transition-transform flex-shrink-0"
+                  id="copy-btn"
+                  onclick="copyCoupon()"
+                >
+                  <span
+                    class="material-symbols-outlined text-[16px]"
+                    id="copy-icon"
+                    >content_copy</span
+                  >
+                  <span id="copy-text">Copiar</span>
+                </button>
+              </div>
+              <!-- Opção Alternativa de PIX -->
+              <div
+                class="mt-space-md pt-space-sm flex items-start gap-space-xs bg-surface-container-lowest/10 rounded-lg p-space-sm"
+              >
+                <span
+                  class="material-symbols-outlined text-[18px] text-primary-fixed flex-shrink-0 mt-0.5"
+                  >account_balance_wallet</span
+                >
+                <p class="font-body-sm text-body-sm text-surface-variant">
+                  Prefere receber em dinheiro? O valor base de
+                  <strong class="text-white">R$ 2.940,00</strong> pode ser
+                  transferido via Pix se você optar por não resgatar em produtos
+                  agora.
+                  <button
+                    class="inline text-secondary-fixed font-semibold underline underline-offset-2 ml-1"
+                  >
+                    Alternar para Pix
+                  </button>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Sugestões de Upgrade Inteligente -->
+        <section class="px-gutter mt-space-lg">
+          <div class="flex items-center justify-between mb-space-sm">
+            <div class="flex items-center gap-space-xs">
+              <span class="material-symbols-outlined text-secondary text-[20px]"
+                >recommend</span
+              >
+              <h3 class="font-headline-sm text-headline-sm text-on-surface">
+                Sugestões com seu crédito aplicado
+              </h3>
+            </div>
+          </div>
+          <p
+            class="font-body-sm text-body-sm text-on-surface-variant mb-space-md"
+          >
+            Economia imediata calculada com seu saldo de R$ 3.240,00:
+          </p>
+          <!-- Card 1: iPhone 15 Pro Max -->
+          <div
+            class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm mb-space-md"
+          >
+            <div class="flex gap-space-md">
+              <div
+                class="w-24 h-24 rounded-lg bg-surface-container flex items-center justify-center overflow-hidden flex-shrink-0"
+              >
+                <img
+                  class="w-full h-full object-contain p-1"
+                  data-alt="Apple iPhone 15 Pro Max in Natural Titanium finish on a clean laboratory surface with soft lighting and premium reflections"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwCTCANZJM7ieuZGEcSHZg2hb4j2-emn12PsgfekhzhtEqbcZSZjJLSuhcRGI7hqCvD3FDSLlUfIHbNmRyXtIa6reMrEw8at7JXGYWSXoLnxyioVi2TCg-H5CEN7rBo2Swug-4ZEG4csVNJIGccgo8tJgExoEPKzcYZSz_Aa5cjLau1lIvEDGqo43hdPpBk62UVgJVDO_SxShAFW-OL3AGXjFIhhzboXABbxeCf4yafnJtp2YxPk6PwA"
+                />
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-1 mb-1">
+                  <span
+                    class="px-2 py-0.5 rounded-full bg-secondary-container/50 text-on-secondary-container font-label-sm text-label-sm"
+                    >Novo Lacrado</span
+                  >
+                  <span
+                    class="px-1.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm"
+                    >1 Ano Garantia</span
+                  >
+                </div>
+                <h4
+                  class="font-headline-sm text-headline-sm text-on-surface truncate"
+                >
+                  iPhone 15 Pro Max 256GB
+                </h4>
+                <span
+                  class="font-body-sm text-body-sm text-on-surface-variant block"
+                  >Titânio Natural</span
+                >
+                <div class="mt-2">
+                  <span
+                    class="font-body-sm text-body-sm text-on-surface-variant line-through block"
+                    >De R$ 6.676,10</span
+                  >
+                  <div class="flex items-baseline gap-1">
+                    <span
+                      class="font-label-sm text-label-sm text-secondary font-bold"
+                      >Por</span
+                    >
+                    <span
+                      class="font-headline-md text-headline-md font-bold text-secondary"
+                      >R$ 3.436,10</span
+                    >
+                  </div>
+                  <span
+                    class="font-label-sm text-label-sm text-on-surface-variant block"
+                    >ou 12x de R$ 318,15 sem juros</span
+                  >
+                </div>
+              </div>
+            </div>
+            <button
+              class="w-full mt-space-md h-12 rounded bg-primary text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-2 active:scale-95 transition-transform shadow-sm"
+            >
+              <span class="material-symbols-outlined text-[18px]"
+                >shopping_cart_checkout</span
+              >
+              <span>Aplicar Crédito e Comprar</span>
+            </button>
+          </div>
+          <!-- Card 2: iPhone 14 Pro -->
+          <div
+            class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm"
+          >
+            <div class="flex gap-space-md">
+              <div
+                class="w-24 h-24 rounded-lg bg-surface-container flex items-center justify-center overflow-hidden flex-shrink-0"
+              >
+                <img
+                  class="w-full h-full object-contain p-1"
+                  data-alt="Apple iPhone 14 Pro in Deep Purple finish resting elegantly on a minimalist architectural stand with subtle green backlighting"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiXAZK1VK5uzX21BnuHceAnaN-8G88SNNZngVrT8Df4AbByn6TpIqOkeabYN1S6YHjVMBReZMSBFT8szavhwbNRuR6oTnMFcTWLiCFqGR5y3o1EsboCtnDd8spjxjVMFAbnK0VePIdKQslVqPWQ_2i2dTbR13n2YvRlMvfSzdTCcLxiKeOnVu11azARrbGGrPo8jFWVmEdrP7rcgLlAjnsculhPFI8WGvlDeBnnksc65q2WNYussfoYg"
+                />
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-1 mb-1">
+                  <span
+                    class="px-2 py-0.5 rounded-full bg-secondary-container/50 text-on-secondary-container font-label-sm text-label-sm"
+                    >Excelente Grade A+</span
+                  >
+                  <span
+                    class="px-1.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm"
+                    >Bateria 98%</span
+                  >
+                </div>
+                <h4
+                  class="font-headline-sm text-headline-sm text-on-surface truncate"
+                >
+                  iPhone 14 Pro 128GB
+                </h4>
+                <span
+                  class="font-body-sm text-body-sm text-on-surface-variant block"
+                  >Roxo Profundo</span
+                >
+                <div class="mt-2">
+                  <span
+                    class="font-body-sm text-body-sm text-on-surface-variant line-through block"
+                    >De R$ 4.890,00</span
+                  >
+                  <div class="flex items-baseline gap-1">
+                    <span
+                      class="font-label-sm text-label-sm text-secondary font-bold"
+                      >Por</span
+                    >
+                    <span
+                      class="font-headline-md text-headline-md font-bold text-secondary"
+                      >R$ 1.650,00</span
+                    >
+                  </div>
+                  <span
+                    class="font-label-sm text-label-sm text-on-surface-variant block"
+                    >ou 12x de R$ 152,77 sem juros</span
+                  >
+                </div>
+              </div>
+            </div>
+            <button
+              class="w-full mt-space-md h-12 rounded bg-surface-container text-on-surface font-label-lg text-label-lg flex items-center justify-center gap-2 active:scale-95 transition-transform hover:bg-surface-container-high"
+            >
+              <span class="material-symbols-outlined text-[18px]"
+                >visibility</span
+              >
+              <span>Ver Detalhes do Aparelho</span>
+            </button>
+          </div>
+        </section>
+        <!-- Conformidade Jurídica & Recibo de Quitação -->
+        <section class="px-gutter mt-space-lg">
+          <div class="bg-surface-container-low rounded-xl p-space-md">
+            <div class="flex items-start gap-space-sm mb-space-sm">
+              <div
+                class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant flex-shrink-0"
+              >
+                <span class="material-symbols-outlined text-[20px]"
+                  >verified_user</span
+                >
+              </div>
+              <div>
+                <h4 class="font-headline-sm text-headline-sm text-on-surface">
+                  Termo de Quitação &amp; Transferência
+                </h4>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Dispositivo inspecionado e baixado do iCloud com sucesso. A
+                  titularidade foi repassada para Apple Center e o crédito
+                  outorgado sem ônus residual.
+                </p>
+              </div>
+            </div>
+            <div
+              class="bg-surface-container-lowest rounded-lg p-space-sm flex items-center justify-between shadow-xs"
+            >
+              <div class="flex items-center gap-space-xs min-w-0">
+                <span
+                  class="material-symbols-outlined text-secondary text-[22px]"
+                  >picture_as_pdf</span
+                >
+                <div class="min-w-0">
+                  <span
+                    class="font-label-md text-label-md text-on-surface truncate block"
+                    >Recibo-TradeIn-89420.pdf</span
+                  >
+                  <span
+                    class="font-body-sm text-body-sm text-on-surface-variant block"
+                    >Assinado digitalmente • 142 KB</span
+                  >
+                </div>
+              </div>
+              <button
+                class="h-9 px-3 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold flex items-center gap-1 active:scale-95 transition-transform"
+              >
+                <span class="material-symbols-outlined text-[16px]"
+                  >download</span
+                >
+                <span>Baixar</span>
+              </button>
+            </div>
+          </div>
+        </section>
+        <!-- Botões de Ação Inferiores -->
+        <section class="px-gutter mt-space-xl flex flex-col gap-space-sm">
+          <button
+            class="w-full h-14 rounded-lg bg-secondary text-on-secondary font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-md active:scale-98 transition-transform"
+          >
+            <span class="material-symbols-outlined text-[20px]"
+              >storefront</span
+            >
+            <span>Usar Crédito no Marketplace</span>
+          </button>
+          <div class="flex items-center gap-space-sm pt-space-xs">
+            <button
+              class="flex-1 h-11 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md flex items-center justify-center gap-1 shadow-xs active:scale-95 transition-transform"
+            >
+              <span class="material-symbols-outlined text-[18px]">home</span>
+              <span>Voltar ao Início</span>
+            </button>
+            <button
+              class="flex-1 h-11 rounded-lg bg-surface-container-lowest text-secondary font-label-md text-label-md flex items-center justify-center gap-1 shadow-xs active:scale-95 transition-transform"
+            >
+              <span class="material-symbols-outlined text-[18px]"
+                >support_agent</span
+              >
+              <span>Suporte Concierge</span>
+            </button>
+          </div>
+        </section>
+      </div>
+      <script>
+        function copyCoupon() {
+          const couponText = document
+            .getElementById("coupon-code")
+            .innerText.trim();
+          navigator.clipboard.writeText(couponText).then(() => {
+            const copyBtnText = document.getElementById("copy-text");
+            const copyIcon = document.getElementById("copy-icon");
+
+            copyBtnText.innerText = "Copiado!";
+            copyIcon.innerText = "check";
+
+            setTimeout(() => {
+              copyBtnText.innerText = "Copiar";
+              copyIcon.innerText = "content_copy";
+            }, 2500);
+          });
+        }
+      </script>
+    </main>
+  </body>
+</html>

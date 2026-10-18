@@ -1,0 +1,947 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+      name="viewport"
+    />
+    <meta content="mobile_blank" name="shell-type" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @layer base {
+        html,
+        body {
+          width: 100vw;
+          margin: 0;
+          padding: 0;
+        }
+        body {
+          overscroll-behavior: none;
+        }
+        .pb-safe {
+          padding-bottom: env(safe-area-inset-bottom, 0px);
+        }
+        .pt-safe {
+          padding-top: env(safe-area-inset-top, 0px);
+        }
+        main > :first-child {
+          margin-top: 0 !important;
+        }
+        main > :last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-tint": "#3c6750",
+              "inverse-on-surface": "#eff1f3",
+              "on-tertiary-container": "#4aa783",
+              "on-tertiary": "#ffffff",
+              background: "#f7f9fb",
+              "tertiary-fixed-dim": "#7bd8b1",
+              surface: "#f7f9fb",
+              "on-surface-variant": "#414943",
+              "inverse-primary": "#a2d1b4",
+              tertiary: "#002014",
+              outline: "#717973",
+              "primary-fixed-dim": "#a2d1b4",
+              "on-error-container": "#93000a",
+              "on-error": "#ffffff",
+              "primary-fixed": "#beedd0",
+              "tertiary-fixed": "#97f5cc",
+              "error-container": "#ffdad6",
+              "secondary-fixed-dim": "#4edea3",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary": "#ffffff",
+              "surface-bright": "#f7f9fb",
+              "secondary-container": "#6cf8bb",
+              "surface-container-low": "#f2f4f6",
+              "on-secondary-fixed-variant": "#005236",
+              "on-tertiary-fixed-variant": "#00513a",
+              "inverse-surface": "#2d3133",
+              "secondary-fixed": "#6ffbbe",
+              error: "#ba1a1a",
+              "on-tertiary-fixed": "#002115",
+              primary: "#002012",
+              "on-surface": "#191c1e",
+              "on-primary-fixed-variant": "#244f39",
+              "primary-container": "#083723",
+              "surface-variant": "#e0e3e5",
+              "tertiary-container": "#003726",
+              "on-secondary-fixed": "#002113",
+              "on-primary-fixed": "#002112",
+              "on-primary-container": "#74a187",
+              "surface-dim": "#d8dadc",
+              "surface-container-highest": "#e0e3e5",
+              "on-background": "#191c1e",
+              "on-primary": "#ffffff",
+              "surface-container-high": "#e6e8ea",
+              "on-secondary-container": "#00714d",
+              "surface-container": "#eceef0",
+              "outline-variant": "#c1c8c1",
+              secondary: "#006c49",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              "gutter-desktop": "1.5rem",
+              "space-xl": "2.25rem",
+              "space-lg": "1.5rem",
+              "space-xs": "0.25rem",
+              gutter: "1rem",
+              "margin-desktop": "2.5rem",
+              "space-sm": "0.5rem",
+              margin: "1rem",
+              "margin-tablet": "1.5rem",
+              "space-md": "1rem",
+            },
+            fontFamily: {
+              "display-hero": ["Inter"],
+              "headline-sm": ["Inter"],
+              "label-sm": ["Inter"],
+              "label-md": ["Inter"],
+              "body-sm": ["Inter"],
+              "headline-lg-mobile": ["Inter"],
+              "body-lg": ["Inter"],
+              "body-md": ["Inter"],
+              "headline-lg": ["Inter"],
+              "label-lg": ["Inter"],
+              "headline-md": ["Inter"],
+              "display-hero-mobile": ["Inter"],
+              sans: ["Inter", "sans-serif"],
+            },
+            fontSize: {
+              "display-hero": [
+                "44px",
+                { lineHeight: "52px", fontWeight: "700" },
+              ],
+              "headline-sm": [
+                "18px",
+                { lineHeight: "24px", fontWeight: "600" },
+              ],
+              "label-sm": ["11px", { lineHeight: "14px", fontWeight: "700" }],
+              "label-md": ["12px", { lineHeight: "16px", fontWeight: "600" }],
+              "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }],
+              "headline-lg-mobile": [
+                "24px",
+                { lineHeight: "32px", fontWeight: "600" },
+              ],
+              "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+              "headline-lg": [
+                "32px",
+                { lineHeight: "40px", fontWeight: "600" },
+              ],
+              "label-lg": ["14px", { lineHeight: "20px", fontWeight: "600" }],
+              "headline-md": [
+                "22px",
+                { lineHeight: "28px", fontWeight: "600" },
+              ],
+              "display-hero-mobile": [
+                "32px",
+                { lineHeight: "40px", fontWeight: "700" },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-surface font-sans text-on-surface antialiased pt-safe pb-safe flex flex-col min-h-screen"
+  >
+    <main class="flex flex-col relative w-full bg-surface flex-grow">
+      <div class="flex flex-col w-full pb-8">
+        <div
+          class="px-4 pt-3 pb-2 border-b border-surface-container-high/60 mb-2"
+        >
+          <div
+            class="flex items-center justify-between max-w-sm mx-auto relative"
+          >
+            <div
+              class="absolute left-4 right-4 top-3.5 h-0.5 bg-secondary-container -z-0"
+            ></div>
+            <div class="flex flex-col items-center gap-1 z-10">
+              <div
+                class="w-7 h-7 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-sm"
+              >
+                <span class="material-symbols-outlined text-sm font-bold"
+                  >check</span
+                >
+              </div>
+              <span class="text-[11px] font-semibold text-primary-container"
+                >Carrinho</span
+              >
+            </div>
+            <div class="flex flex-col items-center gap-1 z-10">
+              <div
+                class="w-7 h-7 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-sm"
+              >
+                <span class="material-symbols-outlined text-sm font-bold"
+                  >check</span
+                >
+              </div>
+              <span class="text-[11px] font-semibold text-primary-container"
+                >Envio</span
+              >
+            </div>
+            <div class="flex flex-col items-center gap-1 z-10">
+              <div
+                class="w-7 h-7 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-sm"
+              >
+                <span class="material-symbols-outlined text-sm font-bold"
+                  >check</span
+                >
+              </div>
+              <span class="text-[11px] font-semibold text-primary-container"
+                >Pagamento</span
+              >
+            </div>
+            <div class="flex flex-col items-center gap-1 z-10">
+              <div
+                class="w-7 h-7 rounded-full bg-primary-container text-on-primary ring-2 ring-secondary-container flex items-center justify-center shadow-sm"
+              >
+                <span class="material-symbols-outlined text-sm font-bold"
+                  >check</span
+                >
+              </div>
+              <span class="text-[11px] font-bold text-secondary"
+                >Confirmação</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="px-4 pt-4 pb-2 flex flex-col items-center text-center">
+          <div
+            class="relative flex items-center justify-center w-16 h-16 rounded-full bg-secondary-container/30 mb-3"
+          >
+            <div
+              class="absolute inset-0 rounded-full bg-secondary-container/20 animate-ping"
+            ></div>
+            <div
+              class="relative w-12 h-12 rounded-full bg-secondary flex items-center justify-center shadow-sm"
+            >
+              <span
+                class="material-symbols-outlined text-on-secondary text-2xl font-bold"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >check</span
+              >
+            </div>
+          </div>
+          <span
+            class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container/40 text-on-secondary-fixed-variant text-label-sm font-semibold mb-2"
+          >
+            <span
+              class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"
+            ></span>
+            Aguardando Pagamento Pix
+          </span>
+          <h1
+            class="text-headline-lg-mobile font-headline-lg-mobile text-on-surface tracking-tight"
+          >
+            Pedido Confirmado!
+          </h1>
+          <div class="flex items-center gap-2 mt-1">
+            <span class="text-body-sm font-body-sm text-on-surface-variant"
+              >Código:</span
+            >
+            <span
+              class="text-label-md font-label-md text-primary-container px-2 py-0.5 rounded bg-surface-container font-mono"
+              >#APC-2025-94812</span
+            >
+          </div>
+          <!-- Countdown Timer -->
+          <div
+            class="mt-3 flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-high/60 text-on-surface"
+          >
+            <span class="material-symbols-outlined text-secondary text-sm"
+              >schedule</span
+            >
+            <span class="text-body-sm font-body-sm text-on-surface-variant"
+              >O código Pix expira em:</span
+            >
+            <span
+              class="text-label-md font-label-md font-mono text-secondary font-bold"
+              id="pix-countdown"
+              >03:03</span
+            >
+          </div>
+        </div>
+        <div class="px-4 mt-4 space-y-4">
+          <!-- PIX PAYMENT CARD -->
+          <div
+            class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col gap-4"
+          >
+            <div
+              class="flex items-start justify-between pb-3 bg-surface-container-low/50 -mx-4 -mt-4 p-4 rounded-t-xl"
+            >
+              <div class="flex flex-col">
+                <span
+                  class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider"
+                  >Total à vista com 10% OFF</span
+                >
+                <div class="flex items-baseline gap-1.5 mt-0.5">
+                  <span
+                    class="text-display-hero-mobile font-display-hero-mobile text-primary-container font-bold"
+                    >R$ 6.676,10</span
+                  >
+                </div>
+                <span
+                  class="text-body-sm font-body-sm text-on-surface-variant/80 line-through"
+                  >De R$ 7.417,88</span
+                >
+              </div>
+              <div
+                class="px-2.5 py-1 rounded-full bg-secondary/10 text-secondary text-label-sm font-label-sm flex items-center gap-1 font-semibold"
+              >
+                <span class="material-symbols-outlined text-xs">savings</span>
+                Economia R$ 741,78
+              </div>
+            </div>
+            <!-- QR Code and Fast Instruction -->
+            <div
+              class="flex flex-col sm:flex-row items-center gap-4 bg-surface-container-low/40 p-3.5 rounded-lg"
+            >
+              <div
+                class="relative w-28 h-28 rounded-lg bg-surface-container-lowest p-2 shadow-sm flex-shrink-0 flex items-center justify-center"
+              >
+                <svg
+                  class="w-full h-full text-primary"
+                  fill="none"
+                  viewBox="0 0 100 100"
+                >
+                  <rect
+                    fill="currentColor"
+                    height="32"
+                    rx="4"
+                    width="32"
+                    x="0"
+                    y="0"
+                  ></rect>
+                  <rect
+                    fill="white"
+                    height="24"
+                    rx="2"
+                    width="24"
+                    x="4"
+                    y="4"
+                  ></rect>
+                  <rect
+                    fill="currentColor"
+                    height="16"
+                    rx="1"
+                    width="16"
+                    x="8"
+                    y="8"
+                  ></rect>
+                  <rect
+                    fill="currentColor"
+                    height="32"
+                    rx="4"
+                    width="32"
+                    x="68"
+                    y="0"
+                  ></rect>
+                  <rect
+                    fill="white"
+                    height="24"
+                    rx="2"
+                    width="24"
+                    x="72"
+                    y="4"
+                  ></rect>
+                  <rect
+                    fill="currentColor"
+                    height="16"
+                    rx="1"
+                    width="16"
+                    x="76"
+                    y="8"
+                  ></rect>
+                  <rect
+                    fill="currentColor"
+                    height="32"
+                    rx="4"
+                    width="32"
+                    x="0"
+                    y="68"
+                  ></rect>
+                  <rect
+                    fill="white"
+                    height="24"
+                    rx="2"
+                    width="24"
+                    x="4"
+                    y="72"
+                  ></rect>
+                  <rect
+                    fill="currentColor"
+                    height="16"
+                    rx="1"
+                    width="16"
+                    x="8"
+                    y="76"
+                  ></rect>
+                  <rect
+                    fill="currentColor"
+                    height="8"
+                    width="8"
+                    x="40"
+                    y="8"
+                  ></rect>
+                  <rect
+                    fill="currentColor"
+                    height="16"
+                    width="8"
+                    x="52"
+                    y="8"
+                  ></rect>
+                  <rect
+                    fill="currentColor"
+                    height="8"
+                    width="8"
+                    x="40"
+                    y="24"
+                  ></rect>
+                  <rect
+                    fill="currentColor"
+                    height="8"
+                    width="16"
+                    x="8"
+                    y="40"
+                  ></rect>
+                  <rect
+                    fill="currentColor"
+                    height="12"
+                    width="8"
+                    x="24"
+                    y="44"
+                  ></rect>
+                  <rect
+                    fill="#006c49"
+                    height="20"
+                    rx="3"
+                    width="20"
+                    x="40"
+                    y="40"
+                  ></rect>
+                  <rect
+                    fill="currentColor"
+                    height="8"
+                    width="12"
+                    x="68"
+                    y="40"
+                  ></rect>
+                  <rect
+                    fill="currentColor"
+                    height="14"
+                    width="8"
+                    x="84"
+                    y="44"
+                  ></rect>
+                  <rect
+                    fill="currentColor"
+                    height="16"
+                    width="8"
+                    x="68"
+                    y="56"
+                  ></rect>
+                  <rect
+                    fill="currentColor"
+                    height="14"
+                    width="8"
+                    x="40"
+                    y="68"
+                  ></rect>
+                  <rect
+                    fill="currentColor"
+                    height="8"
+                    width="16"
+                    x="52"
+                    y="76"
+                  ></rect>
+                  <rect
+                    fill="currentColor"
+                    height="12"
+                    width="16"
+                    x="76"
+                    y="80"
+                  ></rect>
+                </svg>
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div
+                    class="w-6 h-6 rounded-full bg-surface-container-lowest shadow flex items-center justify-center"
+                  >
+                    <span
+                      class="material-symbols-outlined text-secondary text-sm"
+                      >qr_code_2</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-col text-left">
+                <span
+                  class="text-label-md font-label-md text-on-surface font-semibold mb-1"
+                  >Como pagar em segundos:</span
+                >
+                <ol
+                  class="text-body-sm font-body-sm text-on-surface-variant space-y-1"
+                >
+                  <li class="flex items-start gap-1.5">
+                    <span
+                      class="w-4 h-4 rounded-full bg-secondary/15 text-secondary text-label-sm font-label-sm flex items-center justify-center mt-0.5 flex-shrink-0"
+                      >1</span
+                    >
+                    <span class="">Abra o app do seu banco preferido</span>
+                  </li>
+                  <li class="flex items-start gap-1.5">
+                    <span
+                      class="w-4 h-4 rounded-full bg-secondary/15 text-secondary text-label-sm font-label-sm flex items-center justify-center mt-0.5 flex-shrink-0"
+                      >2</span
+                    >
+                    <span class=""
+                      >Selecione <strong>Pix</strong> e depois
+                      <strong>Copia e Cola</strong></span
+                    >
+                  </li>
+                  <li class="flex items-start gap-1.5">
+                    <span
+                      class="w-4 h-4 rounded-full bg-secondary/15 text-secondary text-label-sm font-label-sm flex items-center justify-center mt-0.5 flex-shrink-0"
+                      >3</span
+                    >
+                    <span class="">Cole o código abaixo e confirme</span>
+                  </li>
+                </ol>
+              </div>
+            </div>
+            <!-- Copy Paste Input -->
+            <div class="flex flex-col gap-2">
+              <label class="text-label-sm font-label-sm text-on-surface-variant"
+                >Código Pix Copia e Cola:</label
+              >
+              <div
+                class="flex items-center gap-2 bg-surface-container-low px-3 py-2 rounded-lg"
+              >
+                <input
+                  class="bg-transparent text-body-sm font-body-sm text-on-surface w-full outline-none font-mono truncate select-all"
+                  id="pix-key-input"
+                  readonly=""
+                  type="text"
+                  value="00020126580014br.gov.bcb.pix0136apc-pay-94812-76610-auth202552040000530398654066676.105802BR5921APPLE CENTER BRASIL6009SAO PAULO62070503***6304D8A2"
+                />
+                <button
+                  class="flex-shrink-0 flex items-center gap-1 px-3 py-1.5 rounded-lg bg-primary-container text-on-primary text-label-md font-label-md transition active:scale-95 shadow-sm"
+                  id="copy-pix-btn"
+                  type="button"
+                >
+                  <span class="material-symbols-outlined text-base"
+                    >content_copy</span
+                  >
+                  <span id="copy-text" class="">Copiar</span>
+                </button>
+              </div>
+            </div>
+            <!-- Action Confirmation Buttons -->
+            <div class="grid grid-cols-2 gap-2 pt-1">
+              <button
+                class="w-full py-3 px-2 rounded-lg bg-secondary text-on-secondary text-label-md font-label-md flex items-center justify-center gap-1.5 active:scale-98 transition shadow-sm font-semibold"
+                type="button"
+              >
+                <span class="material-symbols-outlined text-lg"
+                  >check_circle</span
+                >
+                Já fiz o pagamento
+              </button>
+              <button
+                class="w-full py-3 px-2 rounded-lg bg-surface-container-high text-on-surface text-label-md font-label-md flex items-center justify-center gap-1.5 active:scale-98 transition"
+                type="button"
+              >
+                <span class="material-symbols-outlined text-lg text-secondary"
+                  >chat</span
+                >
+                Enviar Comprovante
+              </button>
+            </div>
+          </div>
+          <!-- CERTIFIED WARRANTY & TECHNICAL LAB REPORT -->
+          <div
+            class="bg-surface-container-lowest rounded-xl p-4 shadow-sm relative overflow-hidden"
+          >
+            <!-- Decorative Apple Center Shield Watermark -->
+            <div
+              class="absolute -right-6 -bottom-6 w-32 h-32 opacity-5 pointer-events-none text-primary"
+            >
+              <svg fill="currentColor" viewBox="0 0 100 100">
+                <path
+                  d="M50 0 L90 20 L90 50 C90 75 50 100 50 100 C50 100 10 75 10 50 L10 20 Z"
+                ></path>
+              </svg>
+            </div>
+            <div class="flex items-center justify-between pb-3">
+              <div class="flex items-center gap-2">
+                <div
+                  class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary"
+                >
+                  <span class="material-symbols-outlined text-lg"
+                    >verified</span
+                  >
+                </div>
+                <div>
+                  <span
+                    class="text-label-md font-label-md text-on-surface font-semibold block leading-tight"
+                    >Certificado de Compra &amp; Laudo</span
+                  >
+                  <span
+                    class="text-label-sm font-label-sm text-secondary font-medium"
+                    >Apple Center Certified Lab</span
+                  >
+                </div>
+              </div>
+              <span
+                class="px-2.5 py-0.5 rounded-full bg-secondary-container/30 text-on-secondary-fixed-variant text-label-sm font-label-sm font-semibold"
+              >
+                Grau A+ Impecável
+              </span>
+            </div>
+            <!-- Device Overview Tile -->
+            <div
+              class="flex items-center gap-3 bg-surface-container-low/50 p-3 rounded-lg mt-1"
+            >
+              <div
+                class="w-16 h-20 rounded-lg bg-surface-container-lowest p-1 flex-shrink-0 flex items-center justify-center"
+              >
+                <img
+                  class="w-full h-full object-contain rounded"
+                  data-alt="Official pristine Apple iPhone 15 Pro Max Natural Titanium studio shot, front and back view with glossy metallic reflections and deep rich neutral background, ultra precise clean laboratory lighting."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcyJ95Y8UmIjZ_a_Q56Z1-GmE_qnZoq36RNWLMueWSAsixPuTxdcKUuB_pcq2KmlI_N-C5LWW-X2rL-yxGjikYdf_ym6e-ANtKaAWTWSWs-kHhZGkg8fCsTQlKsJEVf2mJi9pWaRTGUL7W9QIptGz5tD4GbbixsLEIVqkJPRgmYFS-gDCapMisH1R2E8U0ADdtdWpo8BuSK20fVEXyIoJ4dfPuRSgRzgtUGxgQvbcOf7KouRXyLqjIdw"
+                />
+              </div>
+              <div class="flex flex-col min-w-0">
+                <h2
+                  class="text-label-lg font-label-lg text-on-surface font-bold truncate"
+                >
+                  iPhone 15 Pro Max 256GB
+                </h2>
+                <span class="text-body-sm font-body-sm text-on-surface-variant"
+                  >Titânio Natural • Desbloqueado</span
+                >
+                <div class="flex items-center gap-2 mt-1.5 flex-wrap">
+                  <span
+                    class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary/10 text-secondary text-label-sm font-label-sm font-semibold"
+                  >
+                    <span class="material-symbols-outlined text-xs"
+                      >battery_charging_full</span
+                    >
+                    Bateria 98%
+                  </span>
+                  <span
+                    class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant text-label-sm font-label-sm font-mono"
+                  >
+                    IMEI: 356891104829104
+                  </span>
+                </div>
+              </div>
+            </div>
+            <!-- Diagnostic Checklist Preview -->
+            <div
+              class="mt-3 pt-3 bg-surface-container-low/30 p-3 rounded-lg space-y-2"
+            >
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-1.5">
+                  <span
+                    class="material-symbols-outlined text-secondary text-base"
+                    >fact_check</span
+                  >
+                  <span
+                    class="text-label-md font-label-md text-on-surface font-semibold"
+                    >35 Etapas Laboratoriais Aprovadas</span
+                  >
+                </div>
+                <span
+                  class="text-label-sm font-label-sm text-secondary font-bold"
+                  >100% OK</span
+                >
+              </div>
+              <div
+                class="grid grid-cols-2 gap-2 text-label-sm font-label-sm text-on-surface-variant"
+              >
+                <div class="flex items-center gap-1.5">
+                  <span class="material-symbols-outlined text-secondary text-sm"
+                    >check</span
+                  >
+                  <span class="">Face ID &amp; True Tone</span>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <span class="material-symbols-outlined text-secondary text-sm"
+                    >check</span
+                  >
+                  <span class="">Câmeras &amp; LiDAR</span>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <span class="material-symbols-outlined text-secondary text-sm"
+                    >check</span
+                  >
+                  <span class="">Placa Lógica Original</span>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <span class="material-symbols-outlined text-secondary text-sm"
+                    >check</span
+                  >
+                  <span class="">Carga MagSafe &amp; Sem Fio</span>
+                </div>
+              </div>
+            </div>
+            <!-- Warranty Badge -->
+            <div
+              class="mt-3 flex items-center justify-between p-2.5 rounded-lg bg-primary-container text-on-primary"
+            >
+              <div class="flex items-center gap-2">
+                <span
+                  class="material-symbols-outlined text-xl text-secondary-fixed"
+                  >shield_with_heart</span
+                >
+                <div class="flex flex-col">
+                  <span
+                    class="text-label-md font-label-md font-semibold leading-tight"
+                    >Garantia Apple Center 365 Dias</span
+                  >
+                  <span
+                    class="text-label-sm font-label-sm text-primary-fixed-dim"
+                    >Válida até 24/10/2026 com cobertura total</span
+                  >
+                </div>
+              </div>
+            </div>
+            <button
+              class="mt-3 w-full py-2.5 rounded-lg bg-surface-container text-on-surface text-label-md font-label-md flex items-center justify-center gap-1.5 active:scale-98 transition"
+              type="button"
+            >
+              <span class="material-symbols-outlined text-base"
+                >picture_as_pdf</span
+              >
+              Baixar Laudo Técnico Certificado (PDF)
+            </button>
+          </div>
+          <!-- DELIVERY AND ORDER TIMELINE -->
+          <div
+            class="bg-surface-container-lowest rounded-xl p-4 shadow-sm space-y-4"
+          >
+            <div class="flex items-center gap-2">
+              <span
+                class="material-symbols-outlined text-primary-container text-xl"
+                >local_shipping</span
+              >
+              <h3 class="text-headline-sm font-headline-sm text-on-surface">
+                Entrega &amp; Rastreio
+              </h3>
+            </div>
+            <div
+              class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-1"
+            >
+              <div class="flex items-center justify-between">
+                <span
+                  class="text-label-sm font-label-sm text-secondary font-bold uppercase tracking-wider flex items-center gap-1"
+                >
+                  <span class="material-symbols-outlined text-xs">bolt</span>
+                  Entrega Expressa Segurada
+                </span>
+                <span
+                  class="text-label-sm font-label-sm text-on-surface-variant font-medium"
+                  >Previsão</span
+                >
+              </div>
+              <span
+                class="text-label-lg font-label-lg text-on-surface font-semibold"
+                >Chega amanhã até às 18:00</span
+              >
+              <span
+                class="text-body-sm font-body-sm text-on-surface-variant mt-1 flex items-start gap-1"
+              >
+                <span
+                  class="material-symbols-outlined text-base flex-shrink-0 text-outline"
+                  >location_on</span
+                >
+                Av. Paulista, 1842 - Apto 82 • Bela Vista, São Paulo - SP
+              </span>
+            </div>
+            <!-- Timeline Tracking -->
+            <div
+              class="relative pl-6 space-y-5 before:absolute before:left-2.5 before:top-2 before:bottom-2 before:w-0.5 before:bg-surface-container-high"
+            >
+              <!-- Step 1 (Done) -->
+              <div class="relative flex flex-col">
+                <span
+                  class="absolute -left-6 top-0.5 w-5 h-5 rounded-full bg-secondary text-on-secondary flex items-center justify-center text-xs"
+                >
+                  <span class="material-symbols-outlined text-xs font-bold"
+                    >check</span
+                  >
+                </span>
+                <span
+                  class="text-label-md font-label-md text-on-surface font-semibold"
+                  >1. Pedido Realizado</span
+                >
+                <span class="text-body-sm font-body-sm text-on-surface-variant"
+                  >Registrado no sistema central às 14:32</span
+                >
+              </div>
+              <!-- Step 2 (Active) -->
+              <div class="relative flex flex-col">
+                <span
+                  class="absolute -left-6 top-0.5 w-5 h-5 rounded-full bg-secondary-container text-on-secondary-fixed-variant flex items-center justify-center text-xs animate-pulse"
+                >
+                  <span class="material-symbols-outlined text-xs"
+                    >hourglass_top</span
+                  >
+                </span>
+                <span
+                  class="text-label-md font-label-md text-secondary font-bold"
+                  >2. Confirmação do Pix</span
+                >
+                <span class="text-body-sm font-body-sm text-secondary"
+                  >Aguardando liquidação bancária automática</span
+                >
+              </div>
+              <!-- Step 3 (Pending) -->
+              <div class="relative flex flex-col opacity-50">
+                <span
+                  class="absolute -left-6 top-0.5 w-5 h-5 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center text-xs"
+                >
+                  <span class="w-2 h-2 rounded-full bg-outline"></span>
+                </span>
+                <span
+                  class="text-label-md font-label-md text-on-surface font-semibold"
+                  >3. Embalagem em Sala Limpa</span
+                >
+                <span class="text-body-sm font-body-sm text-on-surface-variant"
+                  >Higienização e aplicação do lacre inviolável</span
+                >
+              </div>
+              <!-- Step 4 (Pending) -->
+              <div class="relative flex flex-col opacity-50">
+                <span
+                  class="absolute -left-6 top-0.5 w-5 h-5 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center text-xs"
+                >
+                  <span class="w-2 h-2 rounded-full bg-outline"></span>
+                </span>
+                <span
+                  class="text-label-md font-label-md text-on-surface font-semibold"
+                  >4. Coleta Sedex Express com Seguro Total</span
+                >
+                <span class="text-body-sm font-body-sm text-on-surface-variant"
+                  >Código de rastreamento com atualização em tempo real</span
+                >
+              </div>
+            </div>
+          </div>
+          <!-- BOTTOM ACTION BUTTONS -->
+          <div class="flex flex-col gap-2.5 pt-2">
+            <button
+              class="w-full py-3.5 px-4 rounded-lg bg-primary-container text-on-primary text-label-lg font-label-lg font-semibold flex items-center justify-center gap-2 active:scale-98 transition shadow-sm"
+              type="button"
+            >
+              <span class="material-symbols-outlined text-xl">inventory_2</span>
+              Acompanhar Meus Pedidos
+            </button>
+            <button
+              class="w-full py-3 px-4 rounded-lg bg-surface-container text-on-surface text-label-md font-label-md font-semibold flex items-center justify-center gap-2 active:scale-98 transition"
+              type="button"
+            >
+              <span class="material-symbols-outlined text-secondary text-lg"
+                >support_agent</span
+              >
+              Atendimento Concierge Apple Center
+            </button>
+            <button
+              class="w-full py-2.5 text-center text-on-surface-variant text-label-md font-label-md hover:text-on-surface transition"
+              type="button"
+            >
+              Voltar para a Loja
+            </button>
+          </div>
+        </div>
+      </div>
+      <script>
+        // Countdown Timer Simulation
+        (function () {
+          let timeLeft = 14 * 60 + 59;
+          const timerDisplay = document.getElementById("pix-countdown");
+          if (!timerDisplay) return;
+
+          const interval = setInterval(() => {
+            if (timeLeft <= 0) {
+              clearInterval(interval);
+              timerDisplay.textContent = "Expirado";
+              return;
+            }
+            timeLeft--;
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            timerDisplay.textContent = `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+          }, 1000);
+        })();
+
+        // Copy Pix Key Feedback
+        const copyBtn = document.getElementById("copy-pix-btn");
+        const copyText = document.getElementById("copy-text");
+        const inputEl = document.getElementById("pix-key-input");
+
+        if (copyBtn && inputEl && copyText) {
+          copyBtn.addEventListener("click", () => {
+            navigator.clipboard
+              .writeText(inputEl.value)
+              .then(() => {
+                copyText.textContent = "Copiado!";
+                copyBtn.classList.replace(
+                  "bg-primary-container",
+                  "bg-secondary",
+                );
+                setTimeout(() => {
+                  copyText.textContent = "Copiar";
+                  copyBtn.classList.replace(
+                    "bg-secondary",
+                    "bg-primary-container",
+                  );
+                }, 2200);
+              })
+              .catch(() => {
+                inputEl.select();
+                document.execCommand("copy");
+                copyText.textContent = "Copiado!";
+                setTimeout(() => {
+                  copyText.textContent = "Copiar";
+                }, 2200);
+              });
+          });
+        }
+      </script>
+    </main>
+  </body>
+</html>
