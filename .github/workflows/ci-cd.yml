@@ -1,0 +1,173 @@
+name: CI/CD Pipeline - Apple Center
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  # ============================================================================
+  # 1. Quality, Type Check, Lint & Next.js Build (CI)
+  # ============================================================================
+  quality-check:
+    name: Code Quality & Next.js Build Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+          cache-dependency-path: frontend-apple-center/package-lock.json
+
+      - name: Setup Next.js Build Cache
+        uses: actions/cache@v4
+        with:
+          path: frontend-apple-center/.next/cache
+          key: nextjs-${{ runner.os }}-${{ hashFiles('frontend-apple-center/package-lock.json') }}-${{ hashFiles('frontend-apple-center/src/**/*') }}
+          restore-keys: |
+            nextjs-${{ runner.os }}-${{ hashFiles('frontend-apple-center/package-lock.json') }}-
+
+      - name: Install Dependencies
+        working-directory: frontend-apple-center
+        run: npm ci
+
+      - name: Type Check (TypeScript)
+        working-directory: frontend-apple-center
+        run: npm run typecheck
+
+      - name: Lint Check (ESLint)
+        working-directory: frontend-apple-center
+        run: npm run lint
+
+      - name: Next.js Production Build
+        working-directory: frontend-apple-center
+        run: npm run build
+        env:
+          NEXT_TELEMETRY_DISABLED: 1
+          NODE_ENV: production
+          NEXT_PUBLIC_SITE_URL: https://applecenter.seudominio.com
+          NEXT_PUBLIC_API_URL: /api
+
+  # ============================================================================
+  # 2. Docker Build & Publish (CI / CD)
+  # ============================================================================
+  docker-build-push:
+    name: Build & Push Docker Image
+    needs: quality-check
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Docker Metadata Extraction
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=raw,value=latest,enable=${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master' }}
+            type=sha,format=short,prefix=sha-
+            type=ref,event=branch
+            type=ref,event=pr
+
+      - name: Log in to GitHub Container Registry
+        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and Push Docker Image
+        uses: docker/build-push-action@v6
+        with:
+          context: ./frontend-apple-center
+          file: ./frontend-apple-center/Dockerfile
+          build-args: |
+            NEXT_PUBLIC_SITE_URL=https://applecenter.seudominio.com
+            NEXT_PUBLIC_API_URL=/api
+          push: ${{ github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master') }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  # ============================================================================
+  # 3. Automated Server Deployment via SSH (CD)
+  # ============================================================================
+  deploy:
+    name: Deploy to Debian Server (Docker + Cloudflare)
+    needs: docker-build-push
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Deployment Secrets
+        id: check_secrets
+        run: |
+          if [ -n "${{ secrets.SSH_HOST }}" ] && [ -n "${{ secrets.SSH_KEY }}" ]; then
+            echo "configured=true" >> $GITHUB_OUTPUT
+            echo "SSH deployment secrets configured."
+          else
+            echo "configured=false" >> $GITHUB_OUTPUT
+            echo "SSH deployment secrets (SSH_HOST, SSH_KEY) not set. Skipping remote SSH execution."
+          fi
+
+      - name: Deploy via SSH to Debian Host
+        if: steps.check_secrets.outputs.configured == 'true'
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER || 'root' }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT || 22 }}
+          script: |
+            set -e
+            DEPLOY_PATH="${{ secrets.DEPLOY_PATH || '/opt/apple-center-project' }}"
+            echo "🚀 Deploying Apple Center to $DEPLOY_PATH..."
+            cd "$DEPLOY_PATH"
+
+            # 1. Garantir que a rede Docker compartilhada existe
+            if ! docker network inspect cloudflare_tunnel_network >/dev/null 2>&1; then
+              echo "Criando rede cloudflare_tunnel_network..."
+              docker network create cloudflare_tunnel_network
+            fi
+
+            # 2. Atualizar código do repositório
+            if [ -d ".git" ]; then
+              git pull origin main || true
+            fi
+
+            # 3. Recriar container sem expor portas no host
+            docker compose pull apple-center-frontend || true
+            docker compose build apple-center-frontend
+            docker compose up -d --no-deps apple-center-frontend
+
+            # 4. Limpeza de imagens antigas
+            docker image prune -f
+
+            # 5. Validação de Healthcheck
+            echo "⏳ Aguardando healthcheck do container apple-center-frontend..."
+            sleep 10
+            STATUS=$(docker inspect --format='{{json .State.Health.Status}}' apple-center-frontend 2>/dev/null || echo "\"unknown\"")
+            echo "Status de saúde do frontend: $STATUS"
+            echo "✅ Deploy do Apple Center concluído com sucesso!"

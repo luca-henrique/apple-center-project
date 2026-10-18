@@ -1,0 +1,71 @@
+services:
+  # ==============================================================================
+  # Frontend Next.js SSR (Apple Center)
+  # Sem exposição de porta no host (Passo 2 do Guia de Arquitetura)
+  # ==============================================================================
+  apple-center-frontend:
+    build:
+      context: ./frontend-apple-center
+      dockerfile: Dockerfile
+      args:
+        - NEXT_PUBLIC_SITE_URL=${NEXT_PUBLIC_SITE_URL:-}
+        - NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL:-/api}
+    container_name: apple-center-frontend
+    restart: unless-stopped
+    # Porta isolada internamente no container (sem colisão de portas no host)
+    expose:
+      - "3000"
+    env_file:
+      - ./frontend-apple-center/.env
+    environment:
+      - PORT=3000
+      - NODE_ENV=production
+      - NEXT_TELEMETRY_DISABLED=1
+    networks:
+      - cloudflare_tunnel_network
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://127.0.0.1:3000', (r) => process.exit(r.statusCode < 400 ? 0 : 1)).on('error', () => process.exit(1))"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
+
+  # ==============================================================================
+  # Cloudflare Tunnel Agent (Produção com token oficial)
+  # Ative com: docker compose --profile tunnel up -d
+  # ==============================================================================
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflared-tunnel
+    restart: unless-stopped
+    command: tunnel --no-autoupdate run
+    environment:
+      - TUNNEL_TOKEN=${TUNNEL_TOKEN:-}
+    networks:
+      - cloudflare_tunnel_network
+    profiles:
+      - tunnel
+
+  # ==============================================================================
+  # Cloudflare Quick Tunnel (URL pública instantânea *.trycloudflare.com para testes)
+  # Ative com: docker compose --profile quicktunnel up -d
+  # ==============================================================================
+  quicktunnel-frontend:
+    image: cloudflare/cloudflared:latest
+    container_name: quicktunnel-apple-center-frontend
+    restart: unless-stopped
+    command: tunnel --no-autoupdate --url http://apple-center-frontend:3000
+    networks:
+      - cloudflare_tunnel_network
+    profiles:
+      - quicktunnel
+
+# ==============================================================================
+# Rede Virtual Compartilhada (Passo 1 do Guia de Arquitetura)
+# Crie previamente no Debian com: docker network create cloudflare_tunnel_network
+# ou execute: ./setup-network.sh
+# ==============================================================================
+networks:
+  cloudflare_tunnel_network:
+    name: cloudflare_tunnel_network
+    external: true

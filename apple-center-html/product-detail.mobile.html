@@ -1,0 +1,860 @@
+<!doctype html>
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+      name="viewport"
+    />
+    <meta content="mobile_stack" name="shell-type" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @layer base {
+        html,
+        body {
+          width: 100vw;
+          margin: 0;
+          padding: 0;
+          min-height: 100%;
+        }
+        body {
+          overscroll-behavior-y: none;
+          -webkit-tap-highlight-color: transparent;
+        }
+        .pb-safe {
+          padding-bottom: env(safe-area-inset-bottom, 0px);
+        }
+        .pt-safe {
+          padding-top: env(safe-area-inset-top, 0px);
+        }
+        main > :first-child {
+          margin-top: 0 !important;
+        }
+        main > :last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary": "#ffffff",
+              "secondary-container": "#6cf8bb",
+              "on-secondary-container": "#00714d",
+              "on-surface": "#191c1e",
+              "surface-variant": "#e0e3e5",
+              "surface-container-lowest": "#ffffff",
+              secondary: "#006c49",
+              "surface-container-highest": "#e0e3e5",
+              "secondary-fixed-dim": "#4edea3",
+              surface: "#f7f9fb",
+              "surface-container-low": "#f2f4f6",
+              error: "#ba1a1a",
+              "on-secondary": "#ffffff",
+              "surface-container-high": "#e6e8ea",
+              "on-tertiary-container": "#4aa783",
+              "on-background": "#191c1e",
+              tertiary: "#002014",
+              background: "#f7f9fb",
+              "outline-variant": "#c1c8c1",
+              "on-primary-fixed": "#002112",
+              "tertiary-fixed": "#97f5cc",
+              "on-primary-container": "#74a187",
+              "primary-fixed": "#beedd0",
+              "surface-bright": "#f7f9fb",
+              "surface-container": "#eceef0",
+              "inverse-surface": "#2d3133",
+              outline: "#717973",
+              "inverse-on-surface": "#eff1f3",
+              "on-tertiary": "#ffffff",
+              "primary-container": "#083723",
+              "surface-tint": "#3c6750",
+              "error-container": "#ffdad6",
+              "on-primary-fixed-variant": "#244f39",
+              "surface-dim": "#d8dadc",
+              primary: "#002012",
+              "on-error": "#ffffff",
+              "on-tertiary-fixed": "#002115",
+              "tertiary-fixed-dim": "#7bd8b1",
+              "primary-fixed-dim": "#a2d1b4",
+              "on-error-container": "#93000a",
+              "secondary-fixed": "#6ffbbe",
+              "on-surface-variant": "#414943",
+              "inverse-primary": "#a2d1b4",
+              "on-tertiary-fixed-variant": "#00513a",
+              "tertiary-container": "#003726",
+              "on-secondary-fixed-variant": "#005236",
+              "on-secondary-fixed": "#002113",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              "gutter-desktop": "1.5rem",
+              "space-lg": "1.5rem",
+              "space-sm": "0.5rem",
+              "space-md": "1rem",
+              gutter: "1rem",
+              "margin-desktop": "2.5rem",
+              "margin-tablet": "1.5rem",
+              "space-xl": "2.25rem",
+              margin: "1rem",
+              "space-xs": "0.25rem",
+            },
+            fontFamily: {
+              "headline-sm": ["Inter"],
+              "display-hero": ["Inter"],
+              "label-lg": ["Inter"],
+              "headline-lg": ["Inter"],
+              "label-sm": ["Inter"],
+              "headline-md": ["Inter"],
+              "body-sm": ["Inter"],
+              "headline-lg-mobile": ["Inter"],
+              "body-lg": ["Inter"],
+              "body-md": ["Inter"],
+              "display-hero-mobile": ["Inter"],
+              "label-md": ["Inter"],
+            },
+            fontSize: {
+              "headline-sm": [
+                "18px",
+                { lineHeight: "24px", fontWeight: "600" },
+              ],
+              "display-hero": [
+                "44px",
+                { lineHeight: "52px", fontWeight: "700" },
+              ],
+              "label-lg": ["14px", { lineHeight: "20px", fontWeight: "600" }],
+              "headline-lg": [
+                "32px",
+                { lineHeight: "40px", fontWeight: "600" },
+              ],
+              "label-sm": ["11px", { lineHeight: "14px", fontWeight: "700" }],
+              "headline-md": [
+                "22px",
+                { lineHeight: "28px", fontWeight: "600" },
+              ],
+              "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }],
+              "headline-lg-mobile": [
+                "24px",
+                { lineHeight: "32px", fontWeight: "600" },
+              ],
+              "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+              "display-hero-mobile": [
+                "32px",
+                { lineHeight: "40px", fontWeight: "700" },
+              ],
+              "label-md": ["12px", { lineHeight: "16px", fontWeight: "600" }],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-surface text-on-surface antialiased flex flex-col min-h-screen"
+  >
+    <header
+      class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"
+    >
+      <div
+        class="h-16 px-gutter flex items-center justify-between gap-space-sm"
+      >
+        <div class="flex items-center gap-space-xs min-w-0">
+          <button
+            aria-label="Voltar"
+            class="w-11 h-11 -ml-2 flex items-center justify-center rounded-full text-on-surface hover:text-secondary transition-colors"
+            onclick="history.back()"
+          >
+            <span class="material-symbols-outlined text-[24px]"
+              >arrow_back_ios_new</span
+            ></button
+          ><img
+            alt="logo-apple-center.jpg"
+            class="h-8 w-auto object-contain"
+            src="https://lh3.googleusercontent.com/aida/AEtjO1Uxf9_AImRgvMdDKA88DxU1cDhz5ia172SCRMyZ8d_9IZBqqLsWvGvCkDmKzkYeSLIsuEWVmWUjssaA8CITkmlGpj4kJkYs6m8ab4ETJfoS2Ayrotd6UypAqdvGvTZ8V2dGP1Rgqq4Ek7w8TqVesR7SVlUsV4UalM5dciJmV37UuSVetXL0e_na28XO5DNsIrhp-u94nJk17kipTZRH6-7ksWsy9ddUXVJx5m93gwaim_V7uPdcAAPDs81ILY8coAhdok42bmjFKhI"
+          />
+          <h1
+            class="font-headline-sm text-headline-sm text-on-surface truncate leading-tight"
+          >
+            Detalhes Do Iphone
+          </h1>
+        </div>
+        <div class="flex items-center gap-space-xs">
+          <div
+            class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm"
+          >
+            <span class="material-symbols-outlined text-on-primary text-[18px]"
+              >person</span
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface">
+      <div class="flex flex-col w-full pb-32">
+        <!-- Visual Studio Gallery Container -->
+        <div class="relative w-full bg-surface-container-low overflow-hidden">
+          <!-- Carousel Slides Container -->
+          <div
+            class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar"
+            id="carouselTrack"
+          >
+            <div
+              class="min-w-full snap-center relative flex items-center justify-center p-space-md aspect-square"
+            >
+              <img
+                class="w-full h-full object-contain drop-shadow-md"
+                data-alt="High-end professional studio photograph of Apple iPhone 15 Pro Max Natural Titanium, front angle showing pristine unblemished OLED display and refined titanium metallic frame, softly lit on clean neutral slate background with subtle studio reflections"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCagENpFNqPH2MwgtL0UVmcajtUoEUocb9PUPrKsW-n9fLyEghduxIoyLchVRuNXFQytAhOUotwxNyu4EQfLFGM8wxOnYALG1cg01-YCwM2pW_YHyxkyCZo5z1SOVKsE7XBrhsZ3c48ASCbdiFrwC2ImMEppUMtxZpo03p4kGrf3J1ddzi94u45lV2PZa1iJcGjm2rC1H_hutr9s9qMBpOa6SDKKJ8mTNHqC-DZedq6fCidfyFUotqsIQ"
+              />
+            </div>
+            <div
+              class="min-w-full snap-center relative flex items-center justify-center p-space-md aspect-square"
+            >
+              <img
+                class="w-full h-full object-contain drop-shadow-md"
+                data-alt="Close-up macro studio photo of the back glass and triple camera module of Natural Titanium iPhone 15 Pro Max, mint condition without micro-scratches, brushed titanium edge highlight, laboratory inspection grading lighting"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD620MyFN0PFqeFnz73GtIh-ksBwis525f4qVH6U83NGISLQMbrpvR2hhokaiQfgWEUofRKAQ1fCPWLR5-WeYnrQTuA1wR8m2mdp4j51zNcjAXvGqmV6ZcsaPUmIxVGJZi2KwLp1C2j5NBDjPql7vwG_DqunB0mMjNheQv-wwesAREiqYDVfZQdvKiRcZqAso9xIeoWhjUHXNeK7pwA0U1WbEaaX8-jNYZM-E1uAh7Zv1nOOwVbq41f5w"
+              />
+            </div>
+            <div
+              class="min-w-full snap-center relative flex items-center justify-center p-space-md aspect-square"
+            >
+              <img
+                class="w-full h-full object-contain drop-shadow-md"
+                data-alt="Detailed perspective studio view of USB-C port, speaker grill and smooth titanium chamfered corner of iPhone 15 Pro Max, certified clean zero-debris condition, luxury minimal technology aesthetics"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGbxzgNXJSlEgdNuTRFYbiFLF7rYRG7nyg3IZMJwf31e16tge1vzBcW4UZFa7n1Fn5U7_PP78k6FXCCSsZDVf9RD4oienPbkzX1Cod4pZgTB6oTaXYNFBqhhPGF0C7f0FvSD8nx7nqxL4M-529-zWG5iekFgwXMMtdt-TCVywn0EnwdVAknTrb79IfK8nwDEQttP8Dr9vj75Iw5RVMAH3rFnyTCtvCDKz_ryFMyKWsTreO9P6bEWYIkQ"
+              />
+            </div>
+          </div>
+          <!-- Floating Top Badges -->
+          <div
+            class="absolute top-space-md left-space-md flex flex-wrap gap-space-xs z-10 pointer-events-none"
+          >
+            <span
+              class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm shadow-sm backdrop-blur-md"
+            >
+              <span
+                class="material-symbols-outlined text-[14px]"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >verified</span
+              >
+              Grau A+ (Sem Marcas)
+            </span>
+            <span
+              class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-lowest text-secondary font-label-sm text-label-sm shadow-sm"
+            >
+              <span class="material-symbols-outlined text-[14px]"
+                >battery_charging_full</span
+              >
+              Bateria 97% Original
+            </span>
+          </div>
+          <div class="absolute top-space-md right-space-md z-10">
+            <button
+              aria-label="Favoritar"
+              class="w-9 h-9 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm text-on-surface flex items-center justify-center shadow-sm active:scale-95 transition-transform"
+            >
+              <span class="material-symbols-outlined text-[20px]"
+                >favorite_border</span
+              >
+            </button>
+          </div>
+          <!-- 360 Inspection Interactive Seal -->
+          <div class="absolute bottom-space-md left-space-md z-10">
+            <div
+              class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm shadow-md"
+            >
+              <span
+                class="material-symbols-outlined text-[16px] text-secondary-fixed animate-spin"
+                style="animation-duration: 9s"
+                >360</span
+              >
+              Fotos do Aparelho Real
+            </div>
+          </div>
+          <!-- Indicators -->
+          <div
+            class="absolute bottom-space-md right-space-md z-10 flex items-center gap-1.5 bg-surface-container-lowest/80 backdrop-blur-sm px-2.5 py-1 rounded-full shadow-sm"
+          >
+            <span
+              class="carousel-dot w-2 h-2 rounded-full bg-primary transition-all duration-300"
+            ></span>
+            <span
+              class="carousel-dot w-2 h-2 rounded-full bg-outline-variant transition-all duration-300"
+            ></span>
+            <span
+              class="carousel-dot w-2 h-2 rounded-full bg-outline-variant transition-all duration-300"
+            ></span>
+          </div>
+        </div>
+        <!-- Primary Content Sheet -->
+        <div class="px-gutter pt-space-lg flex flex-col gap-space-lg">
+          <!-- Header & Rating -->
+          <div class="flex flex-col gap-1">
+            <div class="flex items-center justify-between">
+              <span
+                class="font-label-md text-label-md text-secondary tracking-wider uppercase"
+                >Certificado Apple Center</span
+              >
+              <div class="flex items-center gap-1 text-on-surface">
+                <span
+                  class="material-symbols-outlined text-[16px] text-secondary"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >star</span
+                >
+                <span class="font-label-md text-label-md font-semibold"
+                  >4.9</span
+                >
+                <span class="font-body-sm text-body-sm text-on-surface-variant"
+                  >(142)</span
+                >
+              </div>
+            </div>
+            <h2
+              class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-semibold tracking-tight"
+            >
+              iPhone 15 Pro Max
+            </h2>
+            <p class="font-body-md text-body-md text-on-surface-variant">
+              Revisado em 32 etapas técnicas • Garantia 12 meses
+            </p>
+          </div>
+          <!-- Pricing Summary Card -->
+          <div
+            class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-1.5"
+          >
+            <div class="flex items-baseline gap-2">
+              <span
+                class="font-display-hero-mobile text-display-hero-mobile text-secondary font-bold tracking-tight"
+                >R$ 5.899</span
+              >
+              <span
+                class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold"
+                >10% OFF no Pix</span
+              >
+            </div>
+            <div class="flex items-center gap-1 text-on-surface-variant">
+              <span class="material-symbols-outlined text-[16px]"
+                >credit_card</span
+              >
+              <span class="font-body-sm text-body-sm"
+                >ou 12x de
+                <strong class="text-on-surface font-medium">R$ 546,20</strong>
+                sem juros</span
+              >
+            </div>
+            <div
+              class="mt-1 pt-2 flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm bg-surface-container-low px-2.5 py-1.5 rounded-lg"
+            >
+              <span class="flex items-center gap-1">
+                <span
+                  class="material-symbols-outlined text-[16px] text-secondary"
+                  >eco</span
+                >
+                Economia de 34kg de CO2e
+              </span>
+              <span
+                class="font-label-sm text-label-sm text-secondary font-semibold"
+                >Tecnologia Circular</span
+              >
+            </div>
+          </div>
+          <!-- Color Variant Selector -->
+          <div class="flex flex-col gap-space-sm">
+            <div class="flex justify-between items-center">
+              <span class="font-label-lg text-label-lg text-on-surface"
+                >Cor:
+                <span
+                  class="font-normal text-on-surface-variant"
+                  id="selectedColorName"
+                  >Titânio Natural</span
+                ></span
+              >
+              <span class="font-label-sm text-label-sm text-secondary"
+                >Acabamento Aeroespacial</span
+              >
+            </div>
+            <div class="flex items-center gap-3">
+              <!-- Natural Titanium (Active) -->
+              <button
+                aria-label="Titânio Natural"
+                class="color-btn w-11 h-11 rounded-full p-1 bg-surface-container-lowest shadow-sm transition-all scale-105"
+                onclick="selectColor(this, 'Titânio Natural')"
+              >
+                <span
+                  class="w-full h-full rounded-full block bg-[#9c958a] shadow-inner"
+                ></span>
+              </button>
+              <!-- Black Titanium -->
+              <button
+                aria-label="Titânio Preto"
+                class="color-btn w-11 h-11 rounded-full p-1 bg-surface-container-lowest shadow-sm opacity-60 transition-all hover:opacity-100"
+                onclick="selectColor(this, 'Titânio Preto')"
+              >
+                <span
+                  class="w-full h-full rounded-full block bg-[#343538] shadow-inner"
+                ></span>
+              </button>
+              <!-- White Titanium -->
+              <button
+                aria-label="Titânio Branco"
+                class="color-btn w-11 h-11 rounded-full p-1 bg-surface-container-lowest shadow-sm opacity-60 transition-all hover:opacity-100"
+                onclick="selectColor(this, 'Titânio Branco')"
+              >
+                <span
+                  class="w-full h-full rounded-full block bg-[#e3e4e0] shadow-inner"
+                ></span>
+              </button>
+              <!-- Blue Titanium -->
+              <button
+                aria-label="Titânio Azul"
+                class="color-btn w-11 h-11 rounded-full p-1 bg-surface-container-lowest shadow-sm opacity-60 transition-all hover:opacity-100"
+                onclick="selectColor(this, 'Titânio Azul')"
+              >
+                <span
+                  class="w-full h-full rounded-full block bg-[#2a3443] shadow-inner"
+                ></span>
+              </button>
+            </div>
+          </div>
+          <!-- Storage Capacity Selector -->
+          <div class="flex flex-col gap-space-sm">
+            <div class="flex justify-between items-center">
+              <span class="font-label-lg text-label-lg text-on-surface"
+                >Armazenamento</span
+              >
+              <span class="font-label-sm text-label-sm text-on-surface-variant"
+                >NVMe Integrado</span
+              >
+            </div>
+            <div class="grid grid-cols-4 gap-2">
+              <button
+                class="storage-btn py-2.5 px-1 rounded-lg text-center font-label-md text-label-md bg-surface-container-lowest text-on-surface shadow-sm transition-all opacity-50 cursor-not-allowed"
+                disabled=""
+                onclick="selectStorage(this)"
+              >
+                128GB
+                <span class="block text-[10px] text-error">Esgotado</span>
+              </button>
+              <button
+                class="storage-btn py-2.5 px-1 rounded-lg text-center font-label-md text-label-md bg-primary-container text-on-primary shadow-sm transition-all"
+                onclick="selectStorage(this)"
+              >
+                256GB
+                <span
+                  class="block text-[10px] text-secondary-container font-normal"
+                  >Disponível</span
+                >
+              </button>
+              <button
+                class="storage-btn py-2.5 px-1 rounded-lg text-center font-label-md text-label-md bg-surface-container-lowest text-on-surface shadow-sm transition-all hover:bg-surface-container-high"
+                onclick="selectStorage(this)"
+              >
+                512GB
+                <span
+                  class="block text-[10px] text-on-surface-variant font-normal"
+                  >+R$ 700</span
+                >
+              </button>
+              <button
+                class="storage-btn py-2.5 px-1 rounded-lg text-center font-label-md text-label-md bg-surface-container-lowest text-on-surface shadow-sm transition-all hover:bg-surface-container-high"
+                onclick="selectStorage(this)"
+              >
+                1TB
+                <span
+                  class="block text-[10px] text-on-surface-variant font-normal"
+                  >+R$ 1.300</span
+                >
+              </button>
+            </div>
+          </div>
+          <!-- Technical Inspection Accordion Card -->
+          <div
+            class="rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden"
+          >
+            <div
+              class="p-space-md flex items-center justify-between cursor-pointer"
+              onclick="toggleInspection()"
+            >
+              <div class="flex items-center gap-space-sm">
+                <div
+                  class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container"
+                >
+                  <span
+                    class="material-symbols-outlined text-[20px]"
+                    style="font-variation-settings: &quot;FILL&quot; 1"
+                    >health_metrics</span
+                  >
+                </div>
+                <div>
+                  <h3 class="font-headline-sm text-headline-sm text-on-surface">
+                    Laudo Técnico Oficial
+                  </h3>
+                  <p
+                    class="font-body-sm text-body-sm text-secondary font-medium"
+                  >
+                    32 itens inspecionados • 100% Funcional
+                  </p>
+                </div>
+              </div>
+              <span
+                class="material-symbols-outlined text-on-surface-variant transition-transform duration-300"
+                id="chevronInspection"
+                >expand_more</span
+              >
+            </div>
+            <!-- Inspection Details -->
+            <div
+              class="hidden px-space-md pb-space-md flex flex-col gap-2.5"
+              id="inspectionContent"
+            >
+              <div
+                class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between"
+              >
+                <div class="flex items-center gap-2">
+                  <span
+                    class="material-symbols-outlined text-[18px] text-secondary"
+                    >camera</span
+                  >
+                  <span class="font-body-md text-body-md text-on-surface"
+                    >Câmeras & FaceID</span
+                  >
+                </div>
+                <span
+                  class="font-label-sm text-label-sm text-on-secondary-container bg-secondary-container px-2 py-0.5 rounded-full font-semibold"
+                  >100% OK</span
+                >
+              </div>
+              <div
+                class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between"
+              >
+                <div class="flex items-center gap-2">
+                  <span
+                    class="material-symbols-outlined text-[18px] text-secondary"
+                    >screenshot</span
+                  >
+                  <span class="font-body-md text-body-md text-on-surface"
+                    >Display OLED & TrueTone</span
+                  >
+                </div>
+                <span
+                  class="font-label-sm text-label-sm text-on-secondary-container bg-secondary-container px-2 py-0.5 rounded-full font-semibold"
+                  >Genuíno</span
+                >
+              </div>
+              <div
+                class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between"
+              >
+                <div class="flex items-center gap-2">
+                  <span
+                    class="material-symbols-outlined text-[18px] text-secondary"
+                    >mic</span
+                  >
+                  <span class="font-body-md text-body-md text-on-surface"
+                    >Alto-falantes & Microfones</span
+                  >
+                </div>
+                <span
+                  class="font-label-sm text-label-sm text-on-secondary-container bg-secondary-container px-2 py-0.5 rounded-full font-semibold"
+                  >Calibrados</span
+                >
+              </div>
+              <div
+                class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between"
+              >
+                <div class="flex items-center gap-2">
+                  <span
+                    class="material-symbols-outlined text-[18px] text-secondary"
+                    >battery_full</span
+                  >
+                  <span class="font-body-md text-body-md text-on-surface"
+                    >Bateria e Carga Rápida</span
+                  >
+                </div>
+                <span
+                  class="font-label-sm text-label-sm text-on-secondary-container bg-secondary-container px-2 py-0.5 rounded-full font-semibold"
+                  >97% Vida Útil</span
+                >
+              </div>
+              <div
+                class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between"
+              >
+                <div class="flex items-center gap-2">
+                  <span
+                    class="material-symbols-outlined text-[18px] text-secondary"
+                    >security</span
+                  >
+                  <span class="font-body-md text-body-md text-on-surface"
+                    >Bloqueios de IMEI & iCloud</span
+                  >
+                </div>
+                <span
+                  class="font-label-sm text-label-sm text-on-secondary-container bg-secondary-container px-2 py-0.5 rounded-full font-semibold"
+                  >100% Limpo</span
+                >
+              </div>
+              <div
+                class="mt-1 flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm"
+              >
+                <span
+                  class="material-symbols-outlined text-[16px] text-secondary"
+                  >verified_user</span
+                >
+                <span>Acompanha Certificado Assinado e Selo de Lacração.</span>
+              </div>
+            </div>
+          </div>
+          <!-- Quick Shipping Calculator -->
+          <div
+            class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-3"
+          >
+            <div class="flex items-center justify-between">
+              <span
+                class="font-label-lg text-label-lg text-on-surface flex items-center gap-1.5"
+              >
+                <span
+                  class="material-symbols-outlined text-[18px] text-secondary"
+                  >local_shipping</span
+                >
+                Consultar Entrega Expressa
+              </span>
+              <button
+                class="font-label-sm text-label-sm text-secondary hover:underline"
+              >
+                Não sei meu CEP
+              </button>
+            </div>
+            <div class="flex items-center gap-2">
+              <input
+                class="flex-1 h-12 px-space-md rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:bg-surface-container"
+                id="cepInput"
+                maxlength="9"
+                placeholder="00000-000"
+                type="text"
+                value="01310-200"
+              />
+              <button
+                class="h-12 px-5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center active:scale-95 transition-transform shadow-sm"
+                onclick="calculateShipping()"
+              >
+                Calcular
+              </button>
+            </div>
+            <!-- Shipping Result Feedback -->
+            <div
+              class="p-space-sm rounded-lg bg-surface-container-low flex items-start gap-2.5"
+              id="shippingResult"
+            >
+              <span
+                class="material-symbols-outlined text-[20px] text-secondary mt-0.5"
+                >bolt</span
+              >
+              <div class="flex flex-col">
+                <span
+                  class="font-label-md text-label-md text-on-surface font-semibold"
+                  >Chega amanhã, até às 18h</span
+                >
+                <span class="font-body-sm text-body-sm text-on-surface-variant"
+                  >Frete Grátis com Seguro Total para SP Capital</span
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Value Prop Tickers -->
+          <div class="grid grid-cols-2 gap-2 pb-2">
+            <div
+              class="p-space-sm rounded-lg bg-surface-container-low flex items-center gap-2"
+            >
+              <span class="material-symbols-outlined text-secondary text-[22px]"
+                >swap_horiz</span
+              >
+              <div class="flex flex-col">
+                <span class="font-label-sm text-label-sm text-on-surface"
+                  >7 Dias de Troca</span
+                >
+                <span class="font-body-sm text-body-sm text-on-surface-variant"
+                  >Devolução sem custo</span
+                >
+              </div>
+            </div>
+            <div
+              class="p-space-sm rounded-lg bg-surface-container-low flex items-center gap-2"
+            >
+              <span class="material-symbols-outlined text-secondary text-[22px]"
+                >verified</span
+              >
+              <div class="flex flex-col">
+                <span class="font-label-sm text-label-sm text-on-surface"
+                  >1 Ano Garantia</span
+                >
+                <span class="font-body-sm text-body-sm text-on-surface-variant"
+                  >Suporte dedicado</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Persistent Floating Bottom Action Bar -->
+        <div
+          class="fixed bottom-0 left-0 w-full z-40 bg-surface-container-lowest/90 backdrop-blur-xl shadow-xl px-gutter py-3 pb-safe"
+        >
+          <div class="max-w-md mx-auto flex items-center gap-3">
+            <!-- Add to Cart Icon Button -->
+            <button
+              aria-label="Adicionar à sacola"
+              class="w-13 h-12 px-3.5 rounded-lg bg-surface-container text-on-surface flex items-center justify-center active:scale-95 transition-all shadow-sm"
+              onclick="triggerCartFeedback(this)"
+            >
+              <span class="material-symbols-outlined text-[22px]" id="cartIcon"
+                >shopping_bag</span
+              >
+            </button>
+            <!-- Instant Conversion Checkout Button -->
+            <button
+              class="flex-1 h-12 rounded-lg bg-secondary text-on-secondary font-label-lg text-label-lg font-semibold flex items-center justify-between px-space-md active:scale-[0.98] transition-all shadow-md"
+              onclick="handleInstantBuy()"
+            >
+              <span class="flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-[20px]"
+                  >flash_on</span
+                >
+                Comprar Agora
+              </span>
+              <span
+                class="text-right font-headline-sm text-headline-sm text-on-secondary"
+                >R$ 5.899</span
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+      <script>
+        // Inspection Section Accordion
+        function toggleInspection() {
+          const content = document.getElementById("inspectionContent");
+          const chevron = document.getElementById("chevronInspection");
+          if (content.classList.contains("hidden")) {
+            content.classList.remove("hidden");
+            chevron.style.transform = "rotate(180deg)";
+          } else {
+            content.classList.add("hidden");
+            chevron.style.transform = "rotate(0deg)";
+          }
+        }
+
+        // Color Selector Interaction
+        function selectColor(btn, colorName) {
+          document.querySelectorAll(".color-btn").forEach((b) => {
+            b.classList.remove("scale-105");
+            b.classList.add("opacity-60");
+          });
+          btn.classList.add("scale-105");
+          btn.classList.remove("opacity-60");
+          document.getElementById("selectedColorName").innerText = colorName;
+        }
+
+        // Storage Selector Interaction
+        function selectStorage(btn) {
+          if (btn.disabled) return;
+          document.querySelectorAll(".storage-btn").forEach((b) => {
+            if (!b.disabled) {
+              b.className =
+                "storage-btn py-2.5 px-1 rounded-lg text-center font-label-md text-label-md bg-surface-container-lowest text-on-surface shadow-sm transition-all hover:bg-surface-container-high";
+              const span = b.querySelector("span");
+              if (span && !span.innerText.includes("Esgotado")) {
+                span.className =
+                  "block text-[10px] text-on-surface-variant font-normal";
+              }
+            }
+          });
+          btn.className =
+            "storage-btn py-2.5 px-1 rounded-lg text-center font-label-md text-label-md bg-primary-container text-on-primary shadow-sm transition-all";
+          const activeSpan = btn.querySelector("span");
+          if (activeSpan) {
+            activeSpan.className =
+              "block text-[10px] text-secondary-container font-normal";
+            activeSpan.innerText = "Selecionado";
+          }
+        }
+
+        // Gallery Dot Tracking
+        const track = document.getElementById("carouselTrack");
+        const dots = document.querySelectorAll(".carousel-dot");
+        if (track) {
+          track.addEventListener("scroll", () => {
+            const index = Math.round(track.scrollLeft / track.clientWidth);
+            dots.forEach((dot, i) => {
+              if (i === index) {
+                dot.classList.remove("bg-outline-variant");
+                dot.classList.add("bg-primary");
+              } else {
+                dot.classList.remove("bg-primary");
+                dot.classList.add("bg-outline-variant");
+              }
+            });
+          });
+        }
+
+        // Shipping Calculator Mock
+        function calculateShipping() {
+          const res = document.getElementById("shippingResult");
+          res.style.opacity = "0.5";
+          setTimeout(() => {
+            res.style.opacity = "1";
+          }, 250);
+        }
+
+        // Cart Feedback
+        function triggerCartFeedback(btn) {
+          const icon = document.getElementById("cartIcon");
+          icon.innerText = "check";
+          btn.classList.add(
+            "bg-secondary-container",
+            "text-on-secondary-container",
+          );
+          setTimeout(() => {
+            icon.innerText = "shopping_bag";
+            btn.classList.remove(
+              "bg-secondary-container",
+              "text-on-secondary-container",
+            );
+          }, 1500);
+        }
+
+        function handleInstantBuy() {
+          // Action trigger for checkout flow
+        }
+      </script>
+    </main>
+  </body>
+</html>
