@@ -36,6 +36,33 @@
 
 ---
 
+## 🏗️ Arquitetura & Padrões (patter-fronend.md)
+
+- [x] **Regra de Ouro dos Componentes (Seção 18 - máx. 120 linhas):** Todos os arquivos de componentes e hooks do checkout possuem estritamente menos de 120 linhas:
+  - `src/app/checkout/page.tsx`: 67 linhas
+  - `src/widgets/checkout/ui/checkout-view.tsx`: 110 linhas
+  - `src/widgets/checkout/ui/checkout-header.tsx`: 50 linhas
+  - `src/widgets/checkout/ui/checkout-item-card.tsx`: 97 linhas
+  - `src/widgets/checkout/ui/protection-addon-card.tsx`: 90 linhas
+  - `src/widgets/checkout/ui/coupon-box.tsx`: 104 linhas
+  - `src/widgets/checkout/ui/payment-method-selector.tsx`: 64 linhas
+  - `src/widgets/checkout/ui/order-summary-card.tsx`: 107 linhas
+  - `src/widgets/checkout/ui/reassurance-banner.tsx`: 21 linhas
+  - `src/widgets/checkout/ui/trust-seals-card.tsx`: 38 linhas
+  - `src/widgets/checkout/ui/checkout-bottom-cta.tsx`: 69 linhas
+  - `src/widgets/checkout/ui/atoms/checkout-quantity-stepper.tsx`: 58 linhas
+  - `src/widgets/checkout/ui/atoms/payment-method-card.tsx`: 81 linhas
+  - `src/widgets/checkout/ui/atoms/order-summary-total-box.tsx`: 41 linhas
+  - `src/features/checkout/model/use-checkout.ts`: 117 linhas
+  - `src/features/checkout/model/checkout.calculations.ts`: 61 linhas
+  - `src/features/checkout/model/checkout.schema.ts`: 72 linhas
+- [x] **Atomic Design & FSD:** Separação estrita de cálculos puros (`checkout.calculations.ts`), tipagens/esquemas Zod (`checkout.schema.ts`), hook desacoplado (`use-checkout.ts`) e átomos reutilizáveis em `widgets/checkout/ui/atoms/`.
+- [x] **Áreas de Toque Acessíveis (A11y):** Áreas de toque de no mínimo 44x44px (`min-w-11 min-h-11`) em todos os botões e seletores.
+- [x] **Código em Inglês / UI em pt-BR:** Todas as variáveis, tipos, funções e arquivos em inglês; textos de interface e toasts em português do Brasil.
+- [x] **Tokens Canônicos:** Uso de tokens semânticos sem valores arbitrários (`min-w-11`, `min-h-11`, `min-h-13`, `rounded-full`, etc.).
+
+---
+
 ## 📋 Registro de Bugs Encontrados nesta Tela
 
-Nenhum bug impeditivo detectado. Todos os cálculos matemáticos (Subtotal, Proteção Apple Center, Desconto Pix de 10%, Cupom e Parcelamento em 12x) conferem com o mockup HTML.
+Nenhum bug impeditivo detectado. Todos os cálculos matemáticos (Subtotal, Proteção Apple Center, Desconto Pix de 10%, Cupom e Parcelamento em 12x) conferem com o mockup HTML. Compilação TypeScript com 0 erros e resposta HTTP 200 confirmada.

@@ -43,20 +43,16 @@ export function TradeInView() {
 
   return (
     <div className="bg-surface text-on-surface antialiased flex flex-col min-h-screen">
-      {/* Top Header with Dynamic Step Title & Back Navigation */}
       <TradeInHeader currentStep={currentStep} onBack={goToPreviousStep} />
 
-      {/* Main Flow Container */}
       <main className="flex-1 flex flex-col relative w-full pt-20 pb-28 bg-surface">
         <div className="w-full max-w-xl mx-auto px-gutter pt-space-xs pb-space-lg flex flex-col gap-space-md">
-          {/* Top 4-Step Journey Progress Bar */}
           <TradeInJourneyStepper
             currentStep={currentStep}
             protocolId={protocolId}
             onStepClick={goToStep}
           />
 
-          {/* Step 1: Simulator & Initial Valuation */}
           {currentStep === 1 && (
             <TradeInStepOne
               selectedModel={selectedModel}
@@ -74,7 +70,6 @@ export function TradeInView() {
             />
           )}
 
-          {/* Step 2: Owner Data, Address, Pix, Legal Checkboxes */}
           {currentStep === 2 && (
             <TradeInStepTwo
               selectedModel={selectedModel}
@@ -94,7 +89,6 @@ export function TradeInView() {
             />
           )}
 
-          {/* Step 3: Certified Lab Inspection Report & Authentication Seal */}
           {currentStep === 3 && (
             <TradeInStepThree
               selectedModel={selectedModel}
@@ -105,7 +99,6 @@ export function TradeInView() {
             />
           )}
 
-          {/* Step 4: Redemption, Voucher Code, Smart Upgrade Suggestions, PDF Receipt */}
           {currentStep === 4 && (
             <TradeInStepFour
               selectedModel={selectedModel}
@@ -124,4 +117,3 @@ export function TradeInView() {
     </div>
   );
 }
-

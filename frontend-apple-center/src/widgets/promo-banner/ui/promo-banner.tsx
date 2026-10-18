@@ -4,7 +4,7 @@ import Link from "next/link";
 export function PromoBanner() {
   return (
     <section className="w-full max-w-7xl mx-auto px-gutter my-space-sm" aria-label="Destaque promocional">
-      <div className="relative overflow-hidden rounded-3xl bg-primary text-on-primary p-space-lg sm:p-space-xl flex flex-col justify-between min-h-[220px] sm:min-h-[240px] shadow-sm">
+      <div className="relative overflow-hidden rounded-3xl bg-primary text-on-primary p-space-lg sm:p-space-xl flex flex-col justify-between min-h-55 sm:min-h-60 shadow-sm">
         {/* Glow & Decorator */}
         <div
           className="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-secondary-container/20 blur-3xl pointer-events-none"
@@ -31,7 +31,7 @@ export function PromoBanner() {
         <div className="relative z-10 flex items-center gap-3 pt-3 flex-wrap">
           <Link
             href="#produtos"
-            className="min-h-[44px] px-5 py-2.5 rounded-full font-label-md text-label-md font-semibold bg-white text-primary hover:bg-surface-container-high transition-transform active:scale-95 shadow-sm inline-flex items-center gap-1.5"
+            className="min-h-11 px-5 py-2.5 rounded-full font-label-md text-label-md font-semibold bg-white text-primary hover:bg-surface-container-high transition-transform active:scale-95 shadow-sm inline-flex items-center gap-1.5"
           >
             <span>Ver Ofertas Disponíveis</span>
             <span className="material-symbols-outlined text-[18px]" aria-hidden="true">

@@ -18,7 +18,7 @@ export function ProtectionAddonCard({
     >
       <div className="flex items-start justify-between gap-space-sm">
         <div className="flex gap-space-sm items-start">
-          <div className="w-10 h-10 rounded-lg bg-secondary-container/40 text-on-secondary-container flex items-center justify-center flex-shrink-0 mt-0.5">
+          <div className="w-10 h-10 rounded-lg bg-secondary-container/40 text-on-secondary-container flex items-center justify-center shrink-0 mt-0.5">
             <span className="material-symbols-outlined text-[22px]" aria-hidden="true">
               health_and_safety
             </span>
@@ -54,7 +54,7 @@ export function ProtectionAddonCard({
           aria-checked={isActive}
           aria-label="Ativar ou desativar Proteção Apple Center"
           onClick={onToggle}
-          className="min-w-[48px] min-h-[44px] flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded-full cursor-pointer -mr-1"
+          className="min-w-12 min-h-11 flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded-full cursor-pointer -mr-1"
         >
           <span
             className={`w-11 h-6 rounded-full transition-colors relative block ${
@@ -62,7 +62,7 @@ export function ProtectionAddonCard({
             }`}
           >
             <span
-              className={`absolute top-[2px] left-[2px] bg-on-primary rounded-full h-5 w-5 transition-transform shadow-sm ${
+              className={`absolute top-0.5 left-0.5 bg-on-primary rounded-full h-5 w-5 transition-transform shadow-sm ${
                 isActive ? "translate-x-5" : "translate-x-0"
               }`}
             />

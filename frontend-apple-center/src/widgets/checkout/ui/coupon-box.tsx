@@ -61,7 +61,7 @@ export function CouponBox({
         <button
           type="submit"
           disabled={isApplying}
-          className="min-h-[44px] bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md px-space-md py-2.5 rounded-lg active:scale-95 transition-all flex items-center justify-center shrink-0 disabled:opacity-50 cursor-pointer"
+          className="min-h-11 bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md px-space-md py-2.5 rounded-lg active:scale-95 transition-all flex items-center justify-center shrink-0 disabled:opacity-50 cursor-pointer"
         >
           {isApplying ? (
             <span className="material-symbols-outlined text-[18px] animate-spin">

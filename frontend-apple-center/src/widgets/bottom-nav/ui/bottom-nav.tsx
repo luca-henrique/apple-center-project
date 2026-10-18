@@ -26,7 +26,7 @@ export function BottomNav() {
             <Link
               key={item.label}
               href={item.href}
-              className={`min-w-[48px] min-h-[48px] flex flex-col items-center justify-center gap-0.5 px-3 py-1 rounded-xl transition-all active:scale-95 select-none ${
+              className={`min-w-12 min-h-12 flex flex-col items-center justify-center gap-0.5 px-3 py-1 rounded-xl transition-all active:scale-95 select-none ${
                 isActive
                   ? "text-primary font-semibold"
                   : "text-on-surface-variant hover:text-on-surface"

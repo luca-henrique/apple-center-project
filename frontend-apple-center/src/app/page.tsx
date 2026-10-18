@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { PRODUCTS } from "@/entities/product";
-import { StorefrontPage } from "@/widgets/storefront/ui/storefront-page";
+import { StorefrontPage } from "@/widgets/storefront";
 
 export const metadata: Metadata = {
   title: "Início | Apple Center - iPhones Seminovos com 1 Ano de Garantia",

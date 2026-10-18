@@ -52,3 +52,42 @@
 - [x] **Desktop Padrão (1024px a 1366px):** Layout centralizado focado na conversão, efeitos hover em botões, accordions e cards interativos.
 - [x] **Desktop Ultrawide (1440px+):** Escala harmoniosa sobre fundo `bg-surface`.
 
+---
+
+## 🏗️ Arquitetura & Padrões (patter-fronend.md)
+
+- [x] **Regra de Ouro dos Componentes (Seção 18 - máx. 120 linhas):** Todos os 35+ arquivos de componentes e hooks do trade-in possuem estritamente menos de 120 linhas:
+  - `src/app/trade-in/page.tsx`: 30 linhas
+  - `src/widgets/trade-in/ui/trade-in-view.tsx`: 119 linhas
+  - `src/widgets/trade-in/ui/trade-in-step-one.tsx`: 85 linhas
+  - `src/widgets/trade-in/ui/trade-in-step-two.tsx`: 85 linhas
+  - `src/widgets/trade-in/ui/trade-in-step-three.tsx`: 78 linhas
+  - `src/widgets/trade-in/ui/trade-in-step-four.tsx`: 73 linhas
+  - `src/widgets/trade-in/ui/trade-in-simulator-form.tsx`: 58 linhas
+  - `src/widgets/trade-in/ui/trade-in-valuation-card.tsx`: 77 linhas
+  - `src/widgets/trade-in/ui/atoms/trade-in-model-selector.tsx`: 81 linhas
+  - `src/widgets/trade-in/ui/atoms/trade-in-condition-selector.tsx`: 80 linhas
+  - `src/widgets/trade-in/ui/atoms/trade-in-battery-selector.tsx`: 67 linhas
+  - `src/widgets/trade-in/ui/atoms/trade-in-payout-option.tsx`: 64 linhas
+  - `src/widgets/trade-in/ui/step-two/step-two-quote-summary.tsx`: 82 linhas
+  - `src/widgets/trade-in/ui/step-two/step-two-payout-selector.tsx`: 68 linhas
+  - `src/widgets/trade-in/ui/step-two/step-two-payout-card-item.tsx`: 74 linhas
+  - `src/widgets/trade-in/ui/step-two/step-two-pix-fields.tsx`: 60 linhas
+  - `src/widgets/trade-in/ui/step-two/step-two-owner-card.tsx`: 74 linhas
+  - `src/widgets/trade-in/ui/step-two/step-two-address-and-legal.tsx`: 89 linhas
+  - `src/widgets/trade-in/ui/step-two/step-two-legal-terms.tsx`: 48 linhas
+  - `src/widgets/trade-in/ui/step-two/step-two-bottom-cta.tsx`: 48 linhas
+  - `src/widgets/trade-in/ui/step-three/step-three-status-card.tsx`: 33 linhas
+  - `src/widgets/trade-in/ui/step-three/step-three-valuation-summary.tsx`: 115 linhas
+  - `src/widgets/trade-in/ui/step-three/step-three-inspection-accordion.tsx`: 100 linhas
+  - `src/widgets/trade-in/ui/step-three/step-three-video-and-seal.tsx`: 117 linhas
+  - `src/widgets/trade-in/ui/step-three/step-three-actions.tsx`: 46 linhas
+  - `src/widgets/trade-in/ui/step-four/step-four-hero.tsx`: 45 linhas
+  - `src/widgets/trade-in/ui/step-four/step-four-voucher-card.tsx`: 104 linhas
+  - `src/widgets/trade-in/ui/step-four/step-four-upgrade-suggestions.tsx`: 104 linhas
+  - `src/widgets/trade-in/ui/step-four/step-four-concierge-actions.tsx`: 103 linhas
+  - `src/features/trade-in/hooks/use-trade-in.ts`: 109 linhas
+  - `src/features/trade-in/model/trade-in.calculations.ts`: 42 linhas
+- [x] **Atomic Design & FSD:** Separação estrita de cálculos monetários em `trade-in.calculations.ts`, esquemas de dados em `trade-in.schema.ts`, hook orquestrador `use-trade-in.ts` e decomposição em átomos e moléculas especializadas.
+- [x] **Acessibilidade & Tokens Canônicos:** Substituição de gradientes antigos por `bg-linear-to-br` e `bg-linear-to-bl`, `min-h-13` para alvos de clique, `h-px` em separadores e áreas de toque de no mínimo 44x44px.
+

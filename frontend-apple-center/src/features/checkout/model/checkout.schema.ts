@@ -23,6 +23,8 @@ export interface CouponData {
   description: string;
 }
 
+export type CouponInfo = CouponData;
+
 export const couponSchema = z.object({
   code: z
     .string()
@@ -52,4 +54,19 @@ export const KNOWN_COUPONS: Record<string, CouponData> = {
     discountValue: 200,
     description: "Desconto VIP Exclusivo (-R$ 200,00)",
   },
+};
+
+export const DEFAULT_CHECKOUT_ITEM: CheckoutItem = {
+  id: "iphone-15-pro-max",
+  name: "iPhone 15 Pro Max",
+  storage: "256GB",
+  color: "Titânio Natural",
+  gradeTag: "Grau A+",
+  batteryHealth: "Saúde 98%",
+  unitPriceOriginal: 7249,
+  unitPricePix: 6399,
+  quantity: 1,
+  imageUrl:
+    "https://lh3.googleusercontent.com/aida-public/AB6AXuBINuoeVjfiveC-LwYCLnkelQxnNiAa35W0BVW2xOJbWUins4ewofya12_wnkMBCwaHbG3aZXAVPgvKBdozskKdeCWDgBuQwBSp8HiXd_Cniog4aFh11TJ5UUWW_Y9kKM-5VE6AyU_fRaw0IExQIeUEbszIL3sIlAH06jTZhXo439K7s052jICNxPvfi-G2GV1LQfjxdIdN6D-XIgx4lbHCI26fZrIrwgqxJ04OXSEWDZSnrcnX2kIm4Q",
+  imageAlt: "iPhone 15 Pro Max Titânio Natural certificado com acabamento premium",
 };

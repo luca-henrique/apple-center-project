@@ -15,7 +15,7 @@ export function CheckoutHeader() {
             type="button"
             aria-label="Voltar para a página anterior"
             onClick={() => router.back()}
-            className="min-w-[44px] min-h-[44px] -ml-2 flex items-center justify-center rounded-full text-on-surface hover:text-secondary hover:bg-surface-container-high transition-colors active:scale-95 cursor-pointer"
+            className="min-w-11 min-h-11 -ml-2 flex items-center justify-center rounded-full text-on-surface hover:text-secondary hover:bg-surface-container-high transition-colors active:scale-95 cursor-pointer"
           >
             <span className="material-symbols-outlined text-[24px]" aria-hidden="true">
               arrow_back_ios_new

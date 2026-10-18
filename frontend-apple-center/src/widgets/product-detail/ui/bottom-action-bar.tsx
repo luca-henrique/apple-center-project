@@ -52,7 +52,7 @@ export function BottomActionBar({ product, selectedStorage }: BottomActionBarPro
           size="lg"
           isLoading={isPurchasing}
           onClick={handleBuyNow}
-          className="flex-1 sm:flex-initial sm:min-w-[240px]"
+          className="flex-1 sm:flex-initial sm:min-w-60"
           leftIcon={
             <span className="material-symbols-outlined text-[20px]" aria-hidden="true">
               lock

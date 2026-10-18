@@ -242,3 +242,19 @@ export const TRADE_IN_UPGRADE_SUGGESTIONS: TradeInUpgradeSuggestion[] = [
   },
 ];
 
+export const DEFAULT_TRADE_IN_OWNER_DATA: TradeInOwnerFormValues = {
+  fullName: "Lucas Mendes da Silva",
+  cpf: "482.918.728-10",
+  whatsapp: "(11) 98712-3432",
+  email: "lucas.mendes@email.com",
+  streetAddress: "Av. Paulista, 1842 - Apto 104",
+  neighborhood: "Bela Vista",
+  city: "São Paulo",
+  state: "SP",
+  zipCode: "01310-200",
+  pixKeyType: "phone",
+  pixKey: "(11) 98712-3432",
+  acceptCleanImei: true,
+  acceptFindMyDisabled: true,
+};
+

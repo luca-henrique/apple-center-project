@@ -18,7 +18,7 @@ export function InspectionAccordion({ inspections }: InspectionAccordionProps) {
         type="button"
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
-        className="w-full min-h-[52px] p-space-md sm:p-space-lg flex items-center justify-between text-left select-none cursor-pointer hover:bg-surface-container transition-colors"
+        className="w-full min-h-13 p-space-md sm:p-space-lg flex items-center justify-between text-left select-none cursor-pointer hover:bg-surface-container transition-colors"
       >
         <div className="flex items-center gap-2.5">
           <div className="w-8 h-8 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">

@@ -49,7 +49,7 @@ export function Header({ cartCount = 0 }: HeaderProps) {
               });
             }}
             aria-label="Ajuda e Suporte"
-            className="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-95 cursor-pointer"
+            className="w-11 h-11 min-w-11 min-h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-95 cursor-pointer"
           >
             <span className="material-symbols-outlined text-[22px]" aria-hidden="true">
               help_outline
@@ -61,13 +61,13 @@ export function Header({ cartCount = 0 }: HeaderProps) {
             type="button"
             onClick={handleOpenCart}
             aria-label={`Carrinho com ${cartCount} itens`}
-            className="relative min-w-[44px] min-h-[44px] px-3 py-2 rounded-full flex items-center justify-center gap-1 text-on-surface hover:bg-surface-container-high transition-colors active:scale-95 cursor-pointer"
+            className="relative min-w-11 min-h-11 px-3 py-2 rounded-full flex items-center justify-center gap-1 text-on-surface hover:bg-surface-container-high transition-colors active:scale-95 cursor-pointer"
           >
             <span className="material-symbols-outlined text-[22px]" aria-hidden="true">
               shopping_bag
             </span>
             {cartCount > 0 && (
-              <span className="min-w-[18px] h-[18px] px-1 rounded-full bg-secondary text-on-secondary font-label-sm text-[10px] font-bold flex items-center justify-center">
+              <span className="min-w-4.5 h-4.5 px-1 rounded-full bg-secondary text-on-secondary font-label-sm text-[10px] font-bold flex items-center justify-center">
                 {cartCount}
               </span>
             )}

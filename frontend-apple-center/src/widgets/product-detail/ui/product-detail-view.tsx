@@ -7,8 +7,8 @@ import { GalleryCarousel } from "./gallery-carousel";
 import { PricingCard } from "./pricing-card";
 import { InspectionAccordion } from "./inspection-accordion";
 import { BottomActionBar } from "./bottom-action-bar";
-import { VariantSelectors } from "@/features/select-product-variant/ui/variant-selectors";
-import { ShippingCalculator } from "@/features/calculate-shipping/ui/shipping-calculator";
+import { VariantSelectors } from "@/features/select-product-variant";
+import { ShippingCalculator } from "@/features/calculate-shipping";
 import { TrustBadges } from "@/widgets/trust-badges/ui/trust-badges";
 import { TradeInBanner } from "@/features/trade-in/ui/trade-in-banner";
 

@@ -46,7 +46,7 @@ export function FilterModal({
                   key={item.id}
                   type="button"
                   onClick={() => onConditionChange(item.id)}
-                  className={`w-full min-h-[48px] p-3.5 rounded-2xl border text-left flex items-center justify-between transition-all select-none active:scale-[0.99] ${
+                  className={`w-full min-h-12 p-3.5 rounded-2xl border text-left flex items-center justify-between transition-all select-none active:scale-[0.99] ${
                     isSelected
                       ? "border-primary bg-primary/5 text-primary ring-1 ring-primary/20"
                       : "border-outline-variant/30 hover:bg-surface-container-low text-on-surface"

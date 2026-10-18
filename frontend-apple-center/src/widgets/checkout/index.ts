@@ -8,3 +8,6 @@ export * from "./ui/payment-method-selector";
 export * from "./ui/order-summary-card";
 export * from "./ui/trust-seals-card";
 export * from "./ui/checkout-bottom-cta";
+export * from "./ui/atoms/checkout-quantity-stepper";
+export * from "./ui/atoms/payment-method-card";
+export * from "./ui/atoms/order-summary-total-box";

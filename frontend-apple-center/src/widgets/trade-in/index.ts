@@ -12,4 +12,7 @@ export * from "./ui/trade-in-step-one";
 export * from "./ui/trade-in-step-two";
 export * from "./ui/trade-in-step-three";
 export * from "./ui/trade-in-step-four";
-
+export * from "./ui/atoms/trade-in-payout-option";
+export * from "./ui/atoms/trade-in-model-selector";
+export * from "./ui/atoms/trade-in-condition-selector";
+export * from "./ui/atoms/trade-in-battery-selector";

@@ -32,7 +32,7 @@ export function SearchFilterBar({
             onChange={(e) => onSearchChange(e.target.value)}
             placeholder="Buscar iPhone por modelo, cor ou capacidade..."
             aria-label="Buscar produtos"
-            className="w-full min-h-[44px] pl-10 pr-10 py-2.5 rounded-full bg-surface-container-low border border-outline-variant/30 text-body-md font-body-md text-on-surface placeholder:text-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/20 transition-all shadow-xs"
+            className="w-full min-h-11 pl-10 pr-10 py-2.5 rounded-full bg-surface-container-low border border-outline-variant/30 text-body-md font-body-md text-on-surface placeholder:text-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/20 transition-all shadow-xs"
           />
           {searchQuery && (
             <button
@@ -53,7 +53,7 @@ export function SearchFilterBar({
           type="button"
           onClick={onToggleFilterModal}
           aria-label="Filtrar produtos"
-          className={`min-h-[44px] min-w-[44px] px-3.5 py-2.5 rounded-full flex items-center justify-center gap-1.5 font-label-md text-label-md active:scale-95 transition-all shadow-xs cursor-pointer select-none ${
+          className={`min-h-11 min-w-11 px-3.5 py-2.5 rounded-full flex items-center justify-center gap-1.5 font-label-md text-label-md active:scale-95 transition-all shadow-xs cursor-pointer select-none ${
             hasActiveFilters
               ? "bg-primary text-on-primary ring-2 ring-primary/20"
               : "bg-surface-container-high text-on-surface hover:bg-surface-variant"

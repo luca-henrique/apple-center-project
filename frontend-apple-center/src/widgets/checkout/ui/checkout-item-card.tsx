@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import type { CheckoutItem } from "@/features/checkout/model/checkout.schema";
 import { formatCurrency } from "@/shared/lib/format/currency";
+import { CheckoutQuantityStepper } from "./atoms/checkout-quantity-stepper";
 
 export interface CheckoutItemCardProps {
   item: CheckoutItem;
@@ -24,7 +25,7 @@ export function CheckoutItemCard({
     <article className="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden flex flex-col gap-space-sm border border-outline-variant/10">
       <div className="flex gap-space-md items-start">
         {/* Product Image Thumbnail */}
-        <div className="w-20 h-24 rounded-lg bg-surface-container-low flex-shrink-0 overflow-hidden relative flex items-center justify-center p-1">
+        <div className="w-20 h-24 rounded-lg bg-surface-container-low shrink-0 overflow-hidden relative flex items-center justify-center p-1">
           <Image
             src={item.imageUrl}
             alt={item.imageAlt}
@@ -47,7 +48,7 @@ export function CheckoutItemCard({
               type="button"
               aria-label="Remover item do checkout"
               onClick={onRemove}
-              className="min-w-[36px] min-h-[36px] -mr-1 flex items-center justify-center text-outline hover:text-error transition-colors rounded-lg hover:bg-surface-container-high cursor-pointer"
+              className="min-w-11 min-h-11 -mr-1 flex items-center justify-center text-outline hover:text-error transition-colors rounded-lg hover:bg-surface-container-high cursor-pointer"
             >
               <span className="material-symbols-outlined text-[20px]" aria-hidden="true">
                 delete_outline
@@ -74,39 +75,12 @@ export function CheckoutItemCard({
 
           {/* Stepper & Price */}
           <div className="flex items-center justify-between mt-3 pt-2 border-t border-outline-variant/10">
-            {/* Accessible Stepper with minimum 44px hit areas */}
-            <div className="flex items-center bg-surface-container-low rounded-lg p-0.5 border border-outline-variant/15">
-              <button
-                type="button"
-                aria-label="Diminuir quantidade"
-                onClick={onDecrease}
-                disabled={item.quantity <= 1}
-                className="min-w-[36px] min-h-[36px] flex items-center justify-center text-on-surface hover:bg-surface-container-high rounded transition-colors active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
-              >
-                <span className="material-symbols-outlined text-[16px]" aria-hidden="true">
-                  remove
-                </span>
-              </button>
-              <span
-                className="w-7 text-center font-label-md text-label-md text-on-surface font-bold select-none"
-                aria-live="polite"
-              >
-                {item.quantity}
-              </span>
-              <button
-                type="button"
-                aria-label="Aumentar quantidade"
-                onClick={onIncrease}
-                disabled={item.quantity >= 5}
-                className="min-w-[36px] min-h-[36px] flex items-center justify-center text-on-surface hover:bg-surface-container-high rounded transition-colors active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
-              >
-                <span className="material-symbols-outlined text-[16px]" aria-hidden="true">
-                  add
-                </span>
-              </button>
-            </div>
+            <CheckoutQuantityStepper
+              quantity={item.quantity}
+              onIncrease={onIncrease}
+              onDecrease={onDecrease}
+            />
 
-            {/* Price Preview */}
             <div className="text-right">
               <p className="font-headline-sm text-label-lg text-primary font-bold">
                 {formatCurrency(currentTotalPix)}

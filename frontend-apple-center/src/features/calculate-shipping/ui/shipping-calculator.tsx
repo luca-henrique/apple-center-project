@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useShippingCalculator } from "../hooks/useShippingCalculator";
+import { useShippingCalculator } from "../hooks/use-shipping-calculator";
 import { FormField } from "@/shared/ui/form-field";
 import { Input } from "@/shared/ui/input";
 import { Button } from "@/shared/ui/button";

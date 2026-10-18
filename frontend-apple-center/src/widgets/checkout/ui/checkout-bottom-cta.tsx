@@ -18,7 +18,7 @@ export function CheckoutBottomCta({
         id="checkout-btn"
         disabled={isProcessing}
         onClick={onFinalize}
-        className="w-full min-h-[52px] bg-secondary hover:bg-secondary/95 text-on-secondary font-headline-sm text-headline-sm py-3.5 px-4 rounded-xl shadow-lg flex items-center justify-center gap-2 active:scale-[0.98] transition-all disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
+        className="w-full min-h-13 bg-secondary hover:bg-secondary/95 text-on-secondary font-headline-sm text-headline-sm py-3.5 px-4 rounded-xl shadow-lg flex items-center justify-center gap-2 active:scale-[0.98] transition-all disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
       >
         {isProcessing ? (
           <>

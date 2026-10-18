@@ -22,7 +22,7 @@ export function CategoryChips({
               key={category.id}
               type="button"
               onClick={() => onSelectCategory(category.id)}
-              className={`category-chip shrink-0 min-h-[44px] px-4 py-2.5 rounded-full font-label-md text-label-md shadow-sm active:scale-95 transition-all select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 ${
+              className={`category-chip shrink-0 min-h-11 px-4 py-2.5 rounded-full font-label-md text-label-md shadow-sm active:scale-95 transition-all select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 ${
                 isActive
                   ? "bg-primary text-on-primary ring-2 ring-primary/20"
                   : "bg-surface-container-high text-on-surface hover:bg-surface-variant"
