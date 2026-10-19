@@ -1,0 +1,47 @@
+{
+  "common": {
+    "appName": "Apple Center",
+    "search": "Buscar iPhone por modelo, cor ou capacidade...",
+    "cart": "Carrinho",
+    "help": "Ajuda e Suporte",
+    "filters": "Filtros",
+    "close": "Fechar",
+    "apply": "Aplicar",
+    "clean": "Limpar",
+    "back": "Voltar",
+    "continue": "Continuar",
+    "loading": "Carregando...",
+    "warranty": "1 Ano de Garantia",
+    "freeShipping": "Frete Grátis",
+    "laboratoryInspection": "35 Testes em Laboratório",
+    "batteryHealth": "Bateria 90%+"
+  },
+  "nav": {
+    "home": "Início",
+    "catalog": "Catálogo",
+    "tradeIn": "Trade-in",
+    "checkout": "Checkout"
+  },
+  "hero": {
+    "badge": "Semana do iPhone Seminovo",
+    "title": "Garantia de 1 Ano em Toda a Linha Apple",
+    "subtitle": "Todos os aparelhos passam por auditoria de bateria com mínimo de 90% a 100% de saúde e laudo laboratorial com +35 itens testados.",
+    "cta": "Ver Ofertas Disponíveis"
+  },
+  "catalog": {
+    "title": "Destaques da Semana",
+    "subtitle": "Pronta-entrega inspecionada e higienizada em laboratório",
+    "available": "disponíveis",
+    "addToCart": "Adicionar ao Carrinho",
+    "addedToCart": "adicionado ao carrinho!"
+  },
+  "tradeIn": {
+    "title": "Programa Troca Inteligente",
+    "subtitle": "Seu iPhone usado vale até R$ 4.500 na troca por um novo ou seminovo certificado",
+    "simulate": "Simular Troca",
+    "step1": "Avaliação Inicial",
+    "step2": "Dados e Envio",
+    "step3": "Laudo Técnico",
+    "step4": "Pagamento / Voucher"
+  }
+}

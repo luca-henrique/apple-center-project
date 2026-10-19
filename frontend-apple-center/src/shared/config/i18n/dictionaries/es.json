@@ -1,0 +1,47 @@
+{
+  "common": {
+    "appName": "Apple Center",
+    "search": "Buscar iPhone por modelo, color o capacidad...",
+    "cart": "Carrito",
+    "help": "Ayuda y Soporte",
+    "filters": "Filtros",
+    "close": "Cerrar",
+    "apply": "Aplicar",
+    "clean": "Limpiar",
+    "back": "Volver",
+    "continue": "Continuar",
+    "loading": "Cargando...",
+    "warranty": "1 Año de Garantía",
+    "freeShipping": "Envío Gratis",
+    "laboratoryInspection": "35 Pruebas de Laboratorio",
+    "batteryHealth": "Batería 90%+"
+  },
+  "nav": {
+    "home": "Inicio",
+    "catalog": "Catálogo",
+    "tradeIn": "Trade-in",
+    "checkout": "Checkout"
+  },
+  "hero": {
+    "badge": "Semana del iPhone Seminuevo",
+    "title": "Garantía de 1 Año en Toda la Línea Apple",
+    "subtitle": "Todos los dispositivos pasan por auditoría de batería con mínimo de 90% a 100% de salud y laudo de laboratorio con +35 ítems probados.",
+    "cta": "Ver Ofertas Disponibles"
+  },
+  "catalog": {
+    "title": "Destacados de la Semana",
+    "subtitle": "Entrega inmediata inspeccionada e higienizada en laboratorio",
+    "available": "disponibles",
+    "addToCart": "Añadir al Carrito",
+    "addedToCart": "añadido al carrito!"
+  },
+  "tradeIn": {
+    "title": "Programa de Canje Inteligente",
+    "subtitle": "Tu iPhone usado vale hasta R$ 4.500 en el canje por uno nuevo o seminuevo certificado",
+    "simulate": "Simular Canje",
+    "step1": "Evaluación Inicial",
+    "step2": "Datos y Envío",
+    "step3": "Laudo Técnico",
+    "step4": "Pago / Cupón"
+  }
+}

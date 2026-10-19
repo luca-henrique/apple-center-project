@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import type { Metadata } from "next";
 import { CheckoutView } from "@/widgets/checkout";
-import { getProductBySlug, IPHONE_15_PRO_MAX } from "@/entities/product";
+import { getProductBySlug } from "@/entities/product";
 import type { CheckoutItem } from "@/features/checkout/model/checkout.schema";
 
 export const metadata: Metadata = {

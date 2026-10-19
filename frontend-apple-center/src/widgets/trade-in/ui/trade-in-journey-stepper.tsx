@@ -55,7 +55,6 @@ export function TradeInJourneyStepper({
           {steps.map((item) => {
             const isCompleted = item.step < currentStep;
             const isCurrent = item.step === currentStep;
-            const isPending = item.step > currentStep;
             const canClick = isCompleted && onStepClick;
 
             return (

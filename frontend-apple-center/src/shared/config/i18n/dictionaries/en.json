@@ -1,0 +1,47 @@
+{
+  "common": {
+    "appName": "Apple Center",
+    "search": "Search iPhone by model, color or capacity...",
+    "cart": "Cart",
+    "help": "Help & Support",
+    "filters": "Filters",
+    "close": "Close",
+    "apply": "Apply",
+    "clean": "Clear",
+    "back": "Back",
+    "continue": "Continue",
+    "loading": "Loading...",
+    "warranty": "1 Year Warranty",
+    "freeShipping": "Free Shipping",
+    "laboratoryInspection": "35 Laboratory Tests",
+    "batteryHealth": "90%+ Battery"
+  },
+  "nav": {
+    "home": "Home",
+    "catalog": "Catalog",
+    "tradeIn": "Trade-in",
+    "checkout": "Checkout"
+  },
+  "hero": {
+    "badge": "Pre-Owned iPhone Week",
+    "title": "1-Year Warranty on All Apple Products",
+    "subtitle": "All devices undergo battery audits with minimum 90% to 100% health and official lab reports with +35 tested items.",
+    "cta": "View Available Deals"
+  },
+  "catalog": {
+    "title": "Weekly Highlights",
+    "subtitle": "Lab-inspected and sanitized ready for immediate delivery",
+    "available": "available",
+    "addToCart": "Add to Cart",
+    "addedToCart": "added to cart!"
+  },
+  "tradeIn": {
+    "title": "Smart Trade-in Program",
+    "subtitle": "Your used iPhone is worth up to R$ 4,500 towards a certified new or pre-owned device",
+    "simulate": "Simulate Trade-in",
+    "step1": "Initial Valuation",
+    "step2": "Details & Shipping",
+    "step3": "Lab Inspection",
+    "step4": "Payout / Voucher"
+  }
+}

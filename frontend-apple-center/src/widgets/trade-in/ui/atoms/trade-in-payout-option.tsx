@@ -1,6 +1,5 @@
 import React from "react";
 import type { PayoutMode } from "@/features/trade-in/model/trade-in.schema";
-import { formatCurrency } from "@/shared/lib/format/currency";
 
 interface TradeInPayoutOptionProps {
   mode: PayoutMode;

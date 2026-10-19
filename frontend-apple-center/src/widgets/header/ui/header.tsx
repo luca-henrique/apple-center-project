@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { toast } from "sonner";
+import { LanguageSelector } from "./language-selector";
 
 export interface HeaderProps {
   cartCount?: number;
@@ -39,6 +40,9 @@ export function Header({ cartCount = 0 }: HeaderProps) {
 
         {/* Right Actions */}
         <div className="flex items-center gap-1.5 sm:gap-2">
+          {/* Language Selector */}
+          <LanguageSelector />
+
           {/* Help Button */}
           <button
             type="button"
