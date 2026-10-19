@@ -76,16 +76,16 @@ export const PRODUCTS: Product[] = [
     installmentTimes: 12,
     installmentValueFormatted: "R$ 833,25",
     imageUrl:
-      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-3inch-deserttitanium?wid=800&hei=800&fmt=jpeg",
+      "https://as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-3inch-deserttitanium?wid=800&hei=800&fmt=jpeg",
     imageAlt: "iPhone 16 Pro Max 256GB Titânio Deserto novo na caixa lacrada",
     isNew: true,
     galleryImages: [
       {
-        url: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-3inch-deserttitanium?wid=800&hei=800&fmt=jpeg",
+        url: "https://as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-3inch-deserttitanium?wid=800&hei=800&fmt=jpeg",
         alt: "iPhone 16 Pro Max Titânio Deserto visão frontal",
       },
       {
-        url: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-model-unselect-gallery-1-202409?wid=800&hei=800&fmt=jpeg",
+        url: "https://as-images.apple.com/is/iphone-16-pro-model-unselect-gallery-1-202409?wid=800&hei=800&fmt=jpeg",
         alt: "iPhone 16 Pro Max design e acabamento",
       },
     ],
@@ -119,12 +119,12 @@ export const PRODUCTS: Product[] = [
     installmentTimes: 12,
     installmentValueFormatted: "R$ 694,35",
     imageUrl:
-      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-3inch-blacktitanium?wid=800&hei=800&fmt=jpeg",
+      "https://as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-3inch-blacktitanium?wid=800&hei=800&fmt=jpeg",
     imageAlt: "iPhone 16 Pro 128GB Titânio Preto novo na caixa oficial",
     isNew: true,
     galleryImages: [
       {
-        url: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-3inch-blacktitanium?wid=800&hei=800&fmt=jpeg",
+        url: "https://as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-3inch-blacktitanium?wid=800&hei=800&fmt=jpeg",
         alt: "iPhone 16 Pro Titânio Preto",
       },
     ],
@@ -158,12 +158,12 @@ export const PRODUCTS: Product[] = [
     installmentTimes: 12,
     installmentValueFormatted: "R$ 740,65",
     imageUrl:
-      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-3inch-naturaltitanium?wid=800&hei=800&fmt=jpeg",
+      "https://as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-3inch-naturaltitanium?wid=800&hei=800&fmt=jpeg",
     imageAlt: "iPhone 16 Pro 256GB Titânio Natural certificado em laboratório",
     isNew: false,
     galleryImages: [
       {
-        url: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-3inch-naturaltitanium?wid=800&hei=800&fmt=jpeg",
+        url: "https://as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-3inch-naturaltitanium?wid=800&hei=800&fmt=jpeg",
         alt: "iPhone 16 Pro Titânio Natural",
       },
     ],
@@ -279,12 +279,12 @@ export const PRODUCTS: Product[] = [
     installmentTimes: 12,
     installmentValueFormatted: "R$ 444,35",
     imageUrl:
-      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-finish-select-202309-6-1inch-black?wid=800&hei=800&fmt=jpeg",
+      "https://as-images.apple.com/is/iphone-15-finish-select-202309-6-1inch-black?wid=800&hei=800&fmt=jpeg",
     imageAlt: "iPhone 15 Plus 128GB Preto Seminovo Impecável tela 6.7\"",
     isNew: false,
     galleryImages: [
       {
-        url: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-finish-select-202309-6-1inch-black?wid=800&hei=800&fmt=jpeg",
+        url: "https://as-images.apple.com/is/iphone-15-finish-select-202309-6-1inch-black?wid=800&hei=800&fmt=jpeg",
         alt: "iPhone 15 Plus 128GB Preto",
       },
     ],
@@ -358,12 +358,12 @@ export const PRODUCTS: Product[] = [
     installmentTimes: 12,
     installmentValueFormatted: "R$ 444,35",
     imageUrl:
-      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-midnight?wid=800&hei=800&fmt=jpeg",
+      "https://as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-midnight?wid=800&hei=800&fmt=jpeg",
     imageAlt: "iPhone 14 Pro Max 128GB Preto Espacial seminovo impecável",
     isNew: false,
     galleryImages: [
       {
-        url: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-midnight?wid=800&hei=800&fmt=jpeg",
+        url: "https://as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-midnight?wid=800&hei=800&fmt=jpeg",
         alt: "iPhone 14 Pro Max Preto Espacial",
       },
     ],
@@ -396,12 +396,12 @@ export const PRODUCTS: Product[] = [
     installmentTimes: 12,
     installmentValueFormatted: "R$ 305,46",
     imageUrl:
-      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-blue?wid=800&hei=800&fmt=jpeg",
+      "https://as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-blue?wid=800&hei=800&fmt=jpeg",
     imageAlt: "iPhone 14 128GB Azul seminovo revisado com laudo laboratorial",
     isNew: false,
     galleryImages: [
       {
-        url: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-blue?wid=800&hei=800&fmt=jpeg",
+        url: "https://as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-blue?wid=800&hei=800&fmt=jpeg",
         alt: "iPhone 14 128GB Azul",
       },
     ],
@@ -434,12 +434,12 @@ export const PRODUCTS: Product[] = [
     installmentTimes: 12,
     installmentValueFormatted: "R$ 342,50",
     imageUrl:
-      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-starlight?wid=800&hei=800&fmt=jpeg",
+      "https://as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-starlight?wid=800&hei=800&fmt=jpeg",
     imageAlt: "iPhone 14 Plus 128GB Estelar tela ampla 6.7 polegadas",
     isNew: false,
     galleryImages: [
       {
-        url: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-starlight?wid=800&hei=800&fmt=jpeg",
+        url: "https://as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-starlight?wid=800&hei=800&fmt=jpeg",
         alt: "iPhone 14 Plus 128GB Estelar",
       },
     ],
@@ -473,12 +473,12 @@ export const PRODUCTS: Product[] = [
     installmentTimes: 12,
     installmentValueFormatted: "R$ 268,42",
     imageUrl:
-      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-13-finish-select-202207-midnight?wid=800&hei=800&fmt=jpeg",
+      "https://as-images.apple.com/is/iphone-13-finish-select-202207-midnight?wid=800&hei=800&fmt=jpeg",
     imageAlt: "iPhone 13 128GB Meia-noite seminovo certificado com garantia",
     isNew: false,
     galleryImages: [
       {
-        url: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-13-finish-select-202207-midnight?wid=800&hei=800&fmt=jpeg",
+        url: "https://as-images.apple.com/is/iphone-13-finish-select-202207-midnight?wid=800&hei=800&fmt=jpeg",
         alt: "iPhone 13 128GB Meia-noite",
       },
     ],
@@ -511,12 +511,12 @@ export const PRODUCTS: Product[] = [
     installmentTimes: 12,
     installmentValueFormatted: "R$ 323,98",
     imageUrl:
-      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-13-finish-select-202207-blue?wid=800&hei=800&fmt=jpeg",
+      "https://as-images.apple.com/is/iphone-13-finish-select-202207-blue?wid=800&hei=800&fmt=jpeg",
     imageAlt: "iPhone 13 Pro 128GB Azul Sierra seminovo certificado",
     isNew: false,
     galleryImages: [
       {
-        url: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-13-finish-select-202207-blue?wid=800&hei=800&fmt=jpeg",
+        url: "https://as-images.apple.com/is/iphone-13-finish-select-202207-blue?wid=800&hei=800&fmt=jpeg",
         alt: "iPhone 13 Pro 128GB Azul Sierra",
       },
     ],
@@ -549,12 +549,12 @@ export const PRODUCTS: Product[] = [
     installmentTimes: 12,
     installmentValueFormatted: "R$ 231,38",
     imageUrl:
-      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-13-finish-select-202207-starlight?wid=800&hei=800&fmt=jpeg",
+      "https://as-images.apple.com/is/iphone-13-finish-select-202207-starlight?wid=800&hei=800&fmt=jpeg",
     imageAlt: "iPhone 13 mini 128GB Estelar design compacto de alta performance",
     isNew: false,
     galleryImages: [
       {
-        url: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-13-finish-select-202207-starlight?wid=800&hei=800&fmt=jpeg",
+        url: "https://as-images.apple.com/is/iphone-13-finish-select-202207-starlight?wid=800&hei=800&fmt=jpeg",
         alt: "iPhone 13 mini 128GB Estelar",
       },
     ],
@@ -588,12 +588,12 @@ export const PRODUCTS: Product[] = [
     installmentTimes: 12,
     installmentValueFormatted: "R$ 435,09",
     imageUrl:
-      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/watch-ultra2-digitalmat-gallery-1-202409?wid=800&hei=800&fmt=jpeg",
+      "https://as-images.apple.com/is/watch-ultra2-digitalmat-gallery-1-202409?wid=800&hei=800&fmt=jpeg",
     imageAlt: "Apple Watch Ultra 2 Titânio 49mm seminovo impecável com garantia Apple Center",
     isNew: false,
     galleryImages: [
       {
-        url: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/watch-ultra2-digitalmat-gallery-1-202409?wid=800&hei=800&fmt=jpeg",
+        url: "https://as-images.apple.com/is/watch-ultra2-digitalmat-gallery-1-202409?wid=800&hei=800&fmt=jpeg",
         alt: "Apple Watch Ultra 2 Titânio 49mm",
       },
     ],
@@ -628,12 +628,12 @@ export const PRODUCTS: Product[] = [
     installmentTimes: 12,
     installmentValueFormatted: "R$ 305,46",
     imageUrl:
-      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/watch-s10-digitalmat-gallery-1-202409?wid=800&hei=800&fmt=jpeg",
+      "https://as-images.apple.com/is/watch-s10-digitalmat-gallery-1-202409?wid=800&hei=800&fmt=jpeg",
     imageAlt: "Apple Watch Series 10 GPS 46mm Preto Brilhante novo lacrado",
     isNew: true,
     galleryImages: [
       {
-        url: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/watch-s10-digitalmat-gallery-1-202409?wid=800&hei=800&fmt=jpeg",
+        url: "https://as-images.apple.com/is/watch-s10-digitalmat-gallery-1-202409?wid=800&hei=800&fmt=jpeg",
         alt: "Apple Watch Series 10 Preto Brilhante",
       },
     ],
@@ -670,12 +670,12 @@ export const PRODUCTS: Product[] = [
     installmentTimes: 12,
     installmentValueFormatted: "R$ 416,57",
     imageUrl:
-      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-air-finish-unselect-gallery-1-202405?wid=800&hei=800&fmt=jpeg",
+      "https://as-images.apple.com/is/ipad-air-finish-unselect-gallery-1-202405?wid=800&hei=800&fmt=jpeg",
     imageAlt: "iPad Air 11 polegadas com processador Apple Silicon M2",
     isNew: false,
     galleryImages: [
       {
-        url: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-air-finish-unselect-gallery-1-202405?wid=800&hei=800&fmt=jpeg",
+        url: "https://as-images.apple.com/is/ipad-air-finish-unselect-gallery-1-202405?wid=800&hei=800&fmt=jpeg",
         alt: "iPad Air 11 polegadas M2 Cinza Espacial",
       },
     ],
@@ -714,12 +714,12 @@ export const PRODUCTS: Product[] = [
     installmentTimes: 12,
     installmentValueFormatted: "R$ 231,38",
     imageUrl:
-      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-10th-gen-finish-select-202212-silver?wid=800&hei=800&fmt=jpeg",
+      "https://as-images.apple.com/is/ipad-10th-gen-finish-select-202212-silver?wid=800&hei=800&fmt=jpeg",
     imageAlt: "iPad 10ª Geração 64GB Prata seminovo com garantia Apple Center",
     isNew: false,
     galleryImages: [
       {
-        url: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-10th-gen-finish-select-202212-silver?wid=800&hei=800&fmt=jpeg",
+        url: "https://as-images.apple.com/is/ipad-10th-gen-finish-select-202212-silver?wid=800&hei=800&fmt=jpeg",
         alt: "iPad 10ª Geração Prata",
       },
     ],

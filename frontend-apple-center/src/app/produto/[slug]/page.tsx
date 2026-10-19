@@ -1,3 +1,4 @@
+import React, { Suspense } from "react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import {
@@ -63,7 +64,28 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
   };
 }
 
-export default async function ProductDetailPage({ params }: ProductPageProps) {
+export default function ProductDetailPage({ params }: ProductPageProps) {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen bg-surface flex items-center justify-center p-4">
+          <div className="flex flex-col items-center gap-3">
+            <span className="material-symbols-outlined text-[32px] text-secondary animate-spin">
+              refresh
+            </span>
+            <p className="font-label-md text-label-md text-on-surface-variant">
+              Carregando dados do aparelho...
+            </p>
+          </div>
+        </div>
+      }
+    >
+      <ProductDetailContent params={params} />
+    </Suspense>
+  );
+}
+
+async function ProductDetailContent({ params }: ProductPageProps) {
   const { slug } = await params;
   const product = await getProductBySlug(slug);
 

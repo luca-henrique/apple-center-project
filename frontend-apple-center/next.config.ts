@@ -13,6 +13,14 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "store.storeimages.cdn-apple.com",
       },
+      {
+        protocol: "https",
+        hostname: "as-images.apple.com",
+      },
+      {
+        protocol: "https",
+        hostname: "**.apple.com",
+      },
     ],
   },
   allowedDevOrigins: [

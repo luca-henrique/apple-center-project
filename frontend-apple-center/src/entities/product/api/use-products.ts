@@ -14,7 +14,7 @@ export function useProducts(initialData?: Product[]) {
     queryKey: PRODUCT_QUERY_KEYS.all,
     queryFn: getProducts,
     initialData,
-    initialDataUpdatedAt: 0,
+    initialDataUpdatedAt: 1700000000000,
   });
 }
 
@@ -23,7 +23,7 @@ export function useProductBySlug(slug: string, initialData?: Product) {
     queryKey: PRODUCT_QUERY_KEYS.bySlug(slug),
     queryFn: () => getProductBySlug(slug),
     initialData,
-    initialDataUpdatedAt: 0,
+    initialDataUpdatedAt: 1700000000000,
     enabled: Boolean(slug),
   });
 }

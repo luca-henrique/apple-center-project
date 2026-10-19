@@ -1,3 +1,4 @@
+import React, { Suspense } from "react";
 import type { Metadata } from "next";
 import { PRODUCTS } from "@/entities/product";
 import { StorefrontPage } from "@/widgets/storefront";
@@ -91,7 +92,9 @@ export default function Home() {
         Apple Center - iPhones Novos e Seminovos Certificados com 1 Ano de Garantia
       </h1>
 
-      <StorefrontPage initialProducts={PRODUCTS} />
+      <Suspense fallback={<div className="min-h-screen bg-surface" />}>
+        <StorefrontPage initialProducts={PRODUCTS} />
+      </Suspense>
     </>
   );
 }

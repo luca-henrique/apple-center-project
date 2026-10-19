@@ -21,7 +21,28 @@ interface CheckoutPageProps {
   }>;
 }
 
-export default async function CheckoutPage({ searchParams }: CheckoutPageProps) {
+export default function CheckoutPage({ searchParams }: CheckoutPageProps) {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen bg-surface flex items-center justify-center p-4">
+          <div className="flex flex-col items-center gap-3">
+            <span className="material-symbols-outlined text-[32px] text-secondary animate-spin">
+              refresh
+            </span>
+            <p className="font-label-md text-label-md text-on-surface-variant">
+              Carregando ambiente seguro de checkout...
+            </p>
+          </div>
+        </div>
+      }
+    >
+      <CheckoutContent searchParams={searchParams} />
+    </Suspense>
+  );
+}
+
+async function CheckoutContent({ searchParams }: CheckoutPageProps) {
   const resolvedParams = searchParams ? await searchParams : {};
   const productId = resolvedParams.productId;
 
@@ -46,22 +67,5 @@ export default async function CheckoutPage({ searchParams }: CheckoutPageProps) 
     }
   }
 
-  return (
-    <Suspense
-      fallback={
-        <div className="min-h-screen bg-surface flex items-center justify-center p-4">
-          <div className="flex flex-col items-center gap-3">
-            <span className="material-symbols-outlined text-[32px] text-secondary animate-spin">
-              refresh
-            </span>
-            <p className="font-label-md text-label-md text-on-surface-variant">
-              Carregando ambiente seguro de checkout...
-            </p>
-          </div>
-        </div>
-      }
-    >
-      <CheckoutView initialItem={initialItem} />
-    </Suspense>
-  );
+  return <CheckoutView initialItem={initialItem} />;
 }
